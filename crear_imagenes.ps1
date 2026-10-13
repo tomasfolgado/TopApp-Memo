@@ -1,0 +1,17 @@
+Add-Type -AssemblyName System.Drawing
+$bmp = New-Object System.Drawing.Bitmap(300,300)
+$g = [System.Drawing.Graphics]::FromImage($bmp)
+$g.Clear([System.Drawing.Color]::FromArgb(255,255,224,102))
+$bmp.Save('C:\topapp-posit\PostitApp\Assets\Backgrounds\posit_yellow.png')
+$bmp.Dispose()
+$bmp = New-Object System.Drawing.Bitmap(300,300)
+$g = [System.Drawing.Graphics]::FromImage($bmp)
+$g.Clear([System.Drawing.Color]::FromArgb(255,102,178,255))
+$bmp.Save('C:\topapp-posit\PostitApp\Assets\Backgrounds\posit_blue.png')
+$bmp.Dispose()
+$bmp = New-Object System.Drawing.Bitmap(300,300)
+$g = [System.Drawing.Graphics]::FromImage($bmp)
+$g.Clear([System.Drawing.Color]::FromArgb(255,102,255,153))
+$bmp.Save('C:\topapp-posit\PostitApp\Assets\Backgrounds\posit_green.png')
+$bmp.Dispose()
+Write-Host 'Imagenes creadas correctamente'

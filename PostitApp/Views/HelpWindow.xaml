@@ -1,0 +1,367 @@
+<Window x:Class="PostitApp.Views.HelpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{DynamicResource Str_HelpWinTitle}"
+        Icon="/Assets/Icons/app.ico"
+        Width="740" Height="640"
+        MinWidth="660" MinHeight="520"
+        WindowStartupLocation="CenterOwner"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="CanResizeWithGrip">
+
+    <Window.Resources>
+        <!-- Estilo Tarjeta de Sección -->
+        <Style x:Key="HelpCard" TargetType="Border">
+            <Setter Property="Background" Value="#1E293B"/>
+            <Setter Property="BorderBrush" Value="#334155"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="12"/>
+            <Setter Property="Padding" Value="16,14"/>
+            <Setter Property="Margin" Value="0,0,0,12"/>
+        </Style>
+
+        <!-- Badge de Atajo de Teclado -->
+        <Style x:Key="KbdBadge" TargetType="Border">
+            <Setter Property="Background" Value="#0F172A"/>
+            <Setter Property="BorderBrush" Value="#475569"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="5"/>
+            <Setter Property="Padding" Value="7,3"/>
+            <Setter Property="Margin" Value="0,0,6,0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="12">
+        <!-- Sombra externa de la ventana -->
+        <Border CornerRadius="16" Background="#1E293B">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="24" ShadowDepth="6" Direction="270" Opacity="0.4" Color="#000000"/>
+            </Border.Effect>
+        </Border>
+
+        <!-- Contenedor principal con borde Slate -->
+        <Border CornerRadius="16" Background="#0F172A" BorderBrush="#334155" BorderThickness="1" ClipToBounds="True">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/> <!-- Cabecera -->
+                    <RowDefinition Height="*"/>    <!-- Contenido Scroll -->
+                    <RowDefinition Height="Auto"/> <!-- Pie -->
+                </Grid.RowDefinitions>
+
+                <!-- ==================== 1. CABECERA ==================== -->
+                <Border Grid.Row="0" Background="#1E293B" BorderBrush="#334155" BorderThickness="0,0,0,1"
+                        Padding="20,14" MouseLeftButtonDown="Header_MouseLeftButtonDown" Cursor="SizeAll">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Icono y Título -->
+                        <Image Grid.Column="0" Source="pack://application:,,,/Assets/Icons/app.png"
+                               Width="38" Height="38"
+                               RenderOptions.BitmapScalingMode="HighQuality"
+                               Margin="0,0,14,0"
+                               VerticalAlignment="Center">
+                            <Image.Effect>
+                                <DropShadowEffect BlurRadius="10" ShadowDepth="2" Direction="270" Opacity="0.3" Color="#000000"/>
+                            </Image.Effect>
+                        </Image>
+
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                <TextBlock Text="{DynamicResource Str_HelpHeaderTitle}" FontSize="16" FontWeight="Bold" Foreground="#F8FAFC"/>
+                                <Border Background="#334155" CornerRadius="4" Padding="6,1" Margin="10,0,0,0" VerticalAlignment="Center">
+                                    <TextBlock Text="v2.0" FontSize="10.5" FontWeight="Bold" Foreground="#F59E0B"/>
+                                </Border>
+                            </StackPanel>
+                            <TextBlock Text="{DynamicResource Str_HelpHeaderSubtitle}"
+                                       FontSize="11.5" Foreground="#94A3B8" Margin="0,3,0,0"/>
+                        </StackPanel>
+
+                        <!-- Botón Cerrar -->
+                        <Button Grid.Column="2" Style="{StaticResource BtnHeaderDanger}"
+                                Width="30" Height="28" Click="BtnCerrar_Click" ToolTip="Cerrar (Esc)">
+                            <Path Data="{StaticResource IconCloseGeo}" Stroke="#94A3B8" StrokeThickness="1.8" Width="10" Height="10" Stretch="Uniform"/>
+                        </Button>
+                    </Grid>
+                </Border>
+
+                <!-- ==================== 2. CONTENIDO (SCROLL) ==================== -->
+                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Padding="20,16">
+                    <StackPanel>
+
+                        <!-- SECCIÓN 1: NOTAS ADHESIVAS Y GESTIÓN EN PANTALLA -->
+                        <Border Style="{StaticResource HelpCard}">
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                                    <Border Background="#3B82F6" CornerRadius="6" Width="26" Height="26" Margin="0,0,10,0">
+                                        <Path Data="{StaticResource IconPinGeo}" Fill="#FFFFFF" Width="13" Height="13" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <TextBlock Text="{DynamicResource Str_HelpSec1Title}" FontSize="14" FontWeight="SemiBold" Foreground="#F8FAFC" VerticalAlignment="Center"/>
+                                </StackPanel>
+
+                                <Grid Margin="0,4,0,4">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="• " Foreground="#38BDF8" FontWeight="Bold" FontSize="13"/>
+                                    <TextBlock Grid.Column="1" TextWrapping="Wrap" FontSize="12.5" Foreground="#CBD5E1">
+                                        <Bold Foreground="#F8FAFC">Crear nueva nota:</Bold> Haz clic en el botón <Run Foreground="#F59E0B" FontWeight="Bold">+ Nueva Nota</Run> del Panel de Control o en el botón <Run Foreground="#F59E0B" FontWeight="Bold">+</Run> de la cabecera de cualquier nota.
+                                    </TextBlock>
+                                </Grid>
+
+                                <Grid Margin="0,4,0,4">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="• " Foreground="#38BDF8" FontWeight="Bold" FontSize="13"/>
+                                    <TextBlock Grid.Column="1" TextWrapping="Wrap" FontSize="12.5" Foreground="#CBD5E1">
+                                        <Bold Foreground="#F8FAFC">Siempre visible (Pin / Always on Top):</Bold> Haz clic en el icono de la chincheta para que la nota flote siempre por encima de tus demás ventanas y navegadores.
+                                    </TextBlock>
+                                </Grid>
+
+                                <Grid Margin="0,4,0,4">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="• " Foreground="#38BDF8" FontWeight="Bold" FontSize="13"/>
+                                    <TextBlock Grid.Column="1" TextWrapping="Wrap" FontSize="12.5" Foreground="#CBD5E1">
+                                        <Bold Foreground="#F8FAFC">Ocultar y Restaurar:</Bold> Puedes ocultar una nota pulsando el botón de minimizar de la nota para despejar tu escritorio. La nota no se borra: puedes recuperarla en cualquier momento desde el Panel de Control con el botón del ojo.
+                                    </TextBlock>
+                                </Grid>
+
+                                <Grid Margin="0,4,0,4">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="• " Foreground="#38BDF8" FontWeight="Bold" FontSize="13"/>
+                                    <TextBlock Grid.Column="1" TextWrapping="Wrap" FontSize="12.5" Foreground="#CBD5E1">
+                                        <Bold Foreground="#F8FAFC">Mover y Redimensionar:</Bold> Arrastra la nota desde cualquier parte de su cabecera superior. Para cambiar el tamaño, arrastra desde la esquina inferior derecha.
+                                    </TextBlock>
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- SECCIÓN 2: PERSONALIZACIÓN, COLORES Y DIBUJO -->
+                        <Border Style="{StaticResource HelpCard}">
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                                    <Border Background="#10B981" CornerRadius="6" Width="26" Height="26" Margin="0,0,10,0">
+                                        <Path Data="{StaticResource IconPenGeo}" Fill="#FFFFFF" Width="13" Height="13" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <TextBlock Text="Colores, Formato y Dibujo a Mano Alzada" FontSize="14" FontWeight="SemiBold" Foreground="#F8FAFC" VerticalAlignment="Center"/>
+                                </StackPanel>
+
+                                <Grid Margin="0,4,0,4">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="• " Foreground="#34D399" FontWeight="Bold" FontSize="13"/>
+                                    <TextBlock Grid.Column="1" TextWrapping="Wrap" FontSize="12.5" Foreground="#CBD5E1">
+                                        <Bold Foreground="#F8FAFC">8 Colores de Post-it:</Bold> En el menú de herramientas (icono de 3 líneas) puedes elegir entre Amarillo, Azul, Verde, Rojo, Púrpura, Naranja, Cian o Blanco.
+                                    </TextBlock>
+                                </Grid>
+
+                                <Grid Margin="0,4,0,4">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="• " Foreground="#34D399" FontWeight="Bold" FontSize="13"/>
+                                    <TextBlock Grid.Column="1" TextWrapping="Wrap" FontSize="12.5" Foreground="#CBD5E1">
+                                        <Bold Foreground="#F8FAFC">Opacidad e Intensidad:</Bold> Regula el nivel de transparencia para que el post-it se funda sutilmente con el fondo de pantalla o aumente la vivacidad del color.
+                                    </TextBlock>
+                                </Grid>
+
+                                <Grid Margin="0,4,0,4">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="• " Foreground="#34D399" FontWeight="Bold" FontSize="13"/>
+                                    <TextBlock Grid.Column="1" TextWrapping="Wrap" FontSize="12.5" Foreground="#CBD5E1">
+                                        <Bold Foreground="#F8FAFC">Modo Lápiz / Tinta Digital:</Bold> Pulsa el icono del lápiz para activar el lienzo de dibujo. Podrás realizar bocetos, diagramas o notas manuscritas con selector de color de trazo y grosor.
+                                    </TextBlock>
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- SECCIÓN 3: NOTAS DE VOZ Y DICTADO -->
+                        <Border Style="{StaticResource HelpCard}">
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                                    <Border Background="#6366F1" CornerRadius="6" Width="26" Height="26" Margin="0,0,10,0">
+                                        <Path Data="{StaticResource IconMicGeo}" Fill="#FFFFFF" Width="13" Height="13" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <TextBlock Text="Notas de Voz y Dictado Inteligente" FontSize="14" FontWeight="SemiBold" Foreground="#F8FAFC" VerticalAlignment="Center"/>
+                                </StackPanel>
+
+                                <Grid Margin="0,4,0,4">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="• " Foreground="#818CF8" FontWeight="Bold" FontSize="13"/>
+                                    <TextBlock Grid.Column="1" TextWrapping="Wrap" FontSize="12.5" Foreground="#CBD5E1">
+                                        <Bold Foreground="#F8FAFC">Grabar Memo de Voz:</Bold> Pulsa el icono del micrófono en la cabecera. Aparecerá la barra de grabación para iniciar, pausar o guardar un mensaje sonoro vinculado a esa nota.
+                                    </TextBlock>
+                                </Grid>
+
+                                <Grid Margin="0,4,0,4">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="• " Foreground="#818CF8" FontWeight="Bold" FontSize="13"/>
+                                    <TextBlock Grid.Column="1" TextWrapping="Wrap" FontSize="12.5" Foreground="#CBD5E1">
+                                        <Bold Foreground="#F8FAFC">Reproducción desde el Panel de Control:</Bold> Puedes escuchar el audio de cualquier nota directamente desde la rejilla del panel de control sin necesidad de abrir la ventana.
+                                    </TextBlock>
+                                </Grid>
+
+                                <Grid Margin="0,4,0,4">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="• " Foreground="#818CF8" FontWeight="Bold" FontSize="13"/>
+                                    <TextBlock Grid.Column="1" TextWrapping="Wrap" FontSize="12.5" Foreground="#CBD5E1">
+                                        <Bold Foreground="#F8FAFC">Dictado por Voz:</Bold> Si tu micrófono está configurado, puedes dictar para que tus palabras se conviertan en texto directamente dentro de la nota.
+                                    </TextBlock>
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- SECCIÓN 4: ALARMAS Y RECORDATORIOS -->
+                        <Border Style="{StaticResource HelpCard}">
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                                    <Border Background="#F59E0B" CornerRadius="6" Width="26" Height="26" Margin="0,0,10,0">
+                                        <Path Data="{StaticResource IconBellGeo}" Fill="#FFFFFF" Width="13" Height="13" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <TextBlock Text="Alarmas y Recordatorios Programados" FontSize="14" FontWeight="SemiBold" Foreground="#F8FAFC" VerticalAlignment="Center"/>
+                                </StackPanel>
+
+                                <Grid Margin="0,4,0,4">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="• " Foreground="#FBBF24" FontWeight="Bold" FontSize="13"/>
+                                    <TextBlock Grid.Column="1" TextWrapping="Wrap" FontSize="12.5" Foreground="#CBD5E1">
+                                        <Bold Foreground="#F8FAFC">Configurar Recordatorio:</Bold> Pulsa la campana en la nota para abrir el configurador. Puedes usar accesos rápidos (+15 min, +1 hora, Mañana 09:00) o seleccionar fecha y hora exacta.
+                                    </TextBlock>
+                                </Grid>
+
+                                <Grid Margin="0,4,0,4">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="• " Foreground="#FBBF24" FontWeight="Bold" FontSize="13"/>
+                                    <TextBlock Grid.Column="1" TextWrapping="Wrap" FontSize="12.5" Foreground="#CBD5E1">
+                                        <Bold Foreground="#F8FAFC">Aviso Visual y Sonoro:</Bold> Cuando venza el plazo, TopApp Memo mostrará la alerta en pantalla y reproducirá el aviso sonoro configurado.
+                                    </TextBlock>
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- SECCIÓN 5: ATAJOS DE TECLADO -->
+                        <Border Style="{StaticResource HelpCard}">
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+                                    <Border Background="#475569" CornerRadius="6" Width="26" Height="26" Margin="0,0,10,0">
+                                        <TextBlock Text="⌨" FontSize="14" Foreground="#FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <TextBlock Text="Atajos de Teclado y Productividad" FontSize="14" FontWeight="SemiBold" Foreground="#F8FAFC" VerticalAlignment="Center"/>
+                                </StackPanel>
+
+                                <Grid Margin="0,3">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="130"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Border Grid.Column="0" Style="{StaticResource KbdBadge}">
+                                        <TextBlock Text="Ctrl + B" FontSize="11.5" FontWeight="Bold" Foreground="#38BDF8" HorizontalAlignment="Center"/>
+                                    </Border>
+                                    <TextBlock Grid.Column="1" Text="Formato de texto en Negrita" FontSize="12" Foreground="#CBD5E1" VerticalAlignment="Center"/>
+                                </Grid>
+
+                                <Grid Margin="0,3">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="130"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Border Grid.Column="0" Style="{StaticResource KbdBadge}">
+                                        <TextBlock Text="Ctrl + I" FontSize="11.5" FontWeight="Bold" Foreground="#38BDF8" HorizontalAlignment="Center"/>
+                                    </Border>
+                                    <TextBlock Grid.Column="1" Text="Formato de texto en Cursiva" FontSize="12" Foreground="#CBD5E1" VerticalAlignment="Center"/>
+                                </Grid>
+
+                                <Grid Margin="0,3">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="130"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Border Grid.Column="0" Style="{StaticResource KbdBadge}">
+                                        <TextBlock Text="Ctrl + U" FontSize="11.5" FontWeight="Bold" Foreground="#38BDF8" HorizontalAlignment="Center"/>
+                                    </Border>
+                                    <TextBlock Grid.Column="1" Text="Formato de texto Subrayado" FontSize="12" Foreground="#CBD5E1" VerticalAlignment="Center"/>
+                                </Grid>
+
+                                <Grid Margin="0,3">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="130"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Border Grid.Column="0" Style="{StaticResource KbdBadge}">
+                                        <TextBlock Text="Ctrl + S" FontSize="11.5" FontWeight="Bold" Foreground="#38BDF8" HorizontalAlignment="Center"/>
+                                    </Border>
+                                    <TextBlock Grid.Column="1" Text="Guardar cambios de notas en disco" FontSize="12" Foreground="#CBD5E1" VerticalAlignment="Center"/>
+                                </Grid>
+
+                                <Grid Margin="0,3">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="130"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Border Grid.Column="0" Style="{StaticResource KbdBadge}">
+                                        <TextBlock Text="Escape" FontSize="11.5" FontWeight="Bold" Foreground="#38BDF8" HorizontalAlignment="Center"/>
+                                    </Border>
+                                    <TextBlock Grid.Column="1" Text="Cerrar ventana de ayuda o panel flotante" FontSize="12" Foreground="#CBD5E1" VerticalAlignment="Center"/>
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+
+                    </StackPanel>
+                </ScrollViewer>
+
+                <!-- ==================== 3. PIE DE PÁGINA ==================== -->
+                <Border Grid.Row="2" Background="#1E293B" BorderBrush="#334155" BorderThickness="0,1,0,0" Padding="20,12">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <TextBlock Text="TopApp Memo" FontSize="12" FontWeight="SemiBold" Foreground="#F8FAFC"/>
+                            <TextBlock Text="{DynamicResource Str_HelpPie}" FontSize="11.5" Foreground="#94A3B8" Margin="5,0,0,0"/>
+                        </StackPanel>
+
+                        <Button Style="{StaticResource BtnPrimaryModern}"
+                                Content="{DynamicResource Str_HelpEntendido}"
+                                Padding="20,7"
+                                HorizontalAlignment="Right"
+                                Click="BtnCerrar_Click"/>
+                    </Grid>
+                </Border>
+
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

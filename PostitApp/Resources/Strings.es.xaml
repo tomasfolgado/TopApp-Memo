@@ -1,0 +1,115 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!-- Metadatos de idioma -->
+    <sys:String x:Key="Lang_Code">es</sys:String>
+    <sys:String x:Key="Lang_Name">Español</sys:String>
+
+    <!-- General / Cabecera -->
+    <sys:String x:Key="Str_AppTitle">TopApp Memo</sys:String>
+    <sys:String x:Key="Str_AppSubtitle">por Tomas Folgado • Notas rápidas para Windows</sys:String>
+    <sys:String x:Key="Str_ManagerTitle">TopApp Memo — Panel de Control</sys:String>
+
+    <!-- Métricas -->
+    <sys:String x:Key="Str_Total">Total: </sys:String>
+    <sys:String x:Key="Str_Visibles">Visibles: </sys:String>
+    <sys:String x:Key="Str_Ocultas">Ocultas: </sys:String>
+    <sys:String x:Key="Str_Audio">Audio: </sys:String>
+    <sys:String x:Key="Str_Alarma">Alarma: </sys:String>
+
+    <!-- Acciones Cabecera -->
+    <sys:String x:Key="Str_Ayuda">Ayuda</sys:String>
+    <sys:String x:Key="Str_AyudaTooltip">Centro de Ayuda y Atajos</sys:String>
+    <sys:String x:Key="Str_GuardarTodo">Guardar Todo</sys:String>
+    <sys:String x:Key="Str_GuardarTodoTooltip">Guardar todas las notas en disco</sys:String>
+    <sys:String x:Key="Str_NuevaNota">+ Nueva Nota</sys:String>
+    <sys:String x:Key="Str_NuevaNotaTooltip">Crear una nueva nota adhesiva</sys:String>
+
+    <!-- Barra de Búsqueda y Filtros -->
+    <sys:String x:Key="Str_BuscarNotas">Buscar notas...</sys:String>
+    <sys:String x:Key="Str_FiltroTodas">Todas</sys:String>
+    <sys:String x:Key="Str_FiltroVisibles">Visibles</sys:String>
+    <sys:String x:Key="Str_FiltroOcultas">Ocultas</sys:String>
+    <sys:String x:Key="Str_FiltroAudio">Con Audio</sys:String>
+    <sys:String x:Key="Str_FiltroAlarma">Con Alarma</sys:String>
+    <sys:String x:Key="Str_MostrarTodas">Mostrar Todas</sys:String>
+    <sys:String x:Key="Str_OcultarTodas">Ocultar Todas</sys:String>
+
+    <!-- Tarjetas de Notas -->
+    <sys:String x:Key="Str_CardMostrar">Mostrar nota</sys:String>
+    <sys:String x:Key="Str_CardOcultar">Ocultar nota</sys:String>
+    <sys:String x:Key="Str_CardAudioPlay">Reproducir audio</sys:String>
+    <sys:String x:Key="Str_CardAudioStop">Detener audio</sys:String>
+    <sys:String x:Key="Str_CardDuplicar">Duplicar nota</sys:String>
+    <sys:String x:Key="Str_CardEliminar">Eliminar nota</sys:String>
+    <sys:String x:Key="Str_CardEstadoVisible">Visible</sys:String>
+    <sys:String x:Key="Str_CardEstadoOculta">Oculta</sys:String>
+    <sys:String x:Key="Str_CardSinTexto">(Nota vacía)</sys:String>
+
+    <!-- Pie de página -->
+    <sys:String x:Key="Str_PieAutoguardado">Guardado automático activado</sys:String>
+    <sys:String x:Key="Str_PieCreditos">TopApp Memo v2.0 • Audio autónomo • Diseño vanguardista</sys:String>
+
+    <!-- Diálogos C# -->
+    <sys:String x:Key="Str_MsgEliminarTitulo">TopApp Memo — Eliminar Nota</sys:String>
+    <sys:String x:Key="Str_MsgEliminarPregunta">¿Estás seguro de que quieres eliminar esta nota definitivamente?</sys:String>
+    <sys:String x:Key="Str_MsgGuardadas">Todas las notas han sido guardadas correctamente.</sys:String>
+
+    <!-- Ventana de Ayuda -->
+    <sys:String x:Key="Str_HelpWinTitle">TopApp Memo — Centro de Ayuda</sys:String>
+    <sys:String x:Key="Str_HelpHeaderTitle">Centro de Ayuda y Guía de Uso</sys:String>
+    <sys:String x:Key="Str_HelpHeaderSubtitle">Descubre todas las funciones, atajos y consejos de TopApp Memo</sys:String>
+    <sys:String x:Key="Str_HelpSec1Title">Gestión de Notas y Pantalla</sys:String>
+    <sys:String x:Key="Str_HelpSec1Item1">Crear nueva nota: Haz clic en el botón + Nueva Nota del Panel de Control o en el botón + de cualquier nota.</sys:String>
+    <sys:String x:Key="Str_HelpSec1Item2">Siempre visible (Pin / Always on Top): Haz clic en el icono de la chincheta para que la nota flote siempre por encima de tus demás ventanas.</sys:String>
+    <sys:String x:Key="Str_HelpSec1Item3">Ocultar y Restaurar: Oculta notas para despejar el escritorio sin borrarlas; recupéralas con un clic desde el Panel de Control.</sys:String>
+    <sys:String x:Key="Str_HelpSec1Item4">Mover y Redimensionar: Arrastra la nota desde su cabecera superior. Cambia el tamaño arrastrando desde la esquina inferior derecha.</sys:String>
+
+    <sys:String x:Key="Str_HelpSec2Title">Colores, Formato y Dibujo a Mano Alzada</sys:String>
+    <sys:String x:Key="Str_HelpSec2Item1">8 Colores de Post-it: Elige entre Amarillo, Azul, Verde, Rojo, Púrpura, Naranja, Cian o Blanco.</sys:String>
+    <sys:String x:Key="Str_HelpSec2Item2">Opacidad e Intensidad: Regula el nivel de transparencia y la vivacidad del color.</sys:String>
+    <sys:String x:Key="Str_HelpSec2Item3">Modo Lápiz / Tinta Digital: Activa el icono del lápiz para hacer bocetos, diagramas o notas manuscritas con tinta digital.</sys:String>
+
+    <sys:String x:Key="Str_HelpSec3Title">Notas de Voz y Dictado Inteligente</sys:String>
+    <sys:String x:Key="Str_HelpSec3Item1">Grabar Memo de Voz: Graba mensajes sonoros directamente asociados a tu nota.</sys:String>
+    <sys:String x:Key="Str_HelpSec3Item2">Reproducción desde el Panel: Escucha tus notas de audio directamente desde la rejilla del panel de control.</sys:String>
+    <sys:String x:Key="Str_HelpSec3Item3">Dictado por Voz: Habla y la aplicación convertirá tu voz en texto enriquecido.</sys:String>
+
+    <sys:String x:Key="Str_HelpSec4Title">Alarmas y Recordatorios Programados</sys:String>
+    <sys:String x:Key="Str_HelpSec4Item1">Configurar Recordatorio: Establece avisos rápidos (+15 min, +1 hora, Mañana) o fecha y hora exacta.</sys:String>
+    <sys:String x:Key="Str_HelpSec4Item2">Aviso Visual y Sonoro: Ventana de alerta en pantalla y aviso sonoro al vencer el plazo.</sys:String>
+
+    <sys:String x:Key="Str_HelpSec5Title">Atajos de Teclado y Productividad</sys:String>
+    <sys:String x:Key="Str_HelpKbdNegrita">Formato de texto en Negrita</sys:String>
+    <sys:String x:Key="Str_HelpKbdCursiva">Formato de texto en Cursiva</sys:String>
+    <sys:String x:Key="Str_HelpKbdSubrayado">Formato de texto Subrayado</sys:String>
+    <sys:String x:Key="Str_HelpKbdGuardar">Guardar cambios de notas en disco</sys:String>
+    <sys:String x:Key="Str_HelpKbdEscape">Cerrar ventana de ayuda o panel flotante</sys:String>
+
+    <sys:String x:Key="Str_HelpEntendido">¡Entendido!</sys:String>
+    <sys:String x:Key="Str_HelpPie">TopApp Memo • Notas rápidas y recordatorios para Windows</sys:String>
+
+    <!-- Ventana de Nota (NoteWindow) -->
+    <sys:String x:Key="Str_NoteNueva">Nueva nota</sys:String>
+    <sys:String x:Key="Str_NoteOpciones">Opciones y colores</sys:String>
+    <sys:String x:Key="Str_NoteAudio">Nota de voz / Dictado</sys:String>
+    <sys:String x:Key="Str_NoteAlarma">Configurar alarma</sys:String>
+    <sys:String x:Key="Str_NoteDibujo">Modo dibujo a mano alzada</sys:String>
+    <sys:String x:Key="Str_NotePin">Fijar al frente (Siempre visible)</sys:String>
+    <sys:String x:Key="Str_NoteOcultar">Ocultar nota</sys:String>
+    <sys:String x:Key="Str_NoteCerrar">Eliminar nota</sys:String>
+
+    <!-- Ventana de Alarma (AlarmWindow) -->
+    <sys:String x:Key="Str_AlarmTitle">Configurar Alarma</sys:String>
+    <sys:String x:Key="Str_AlarmPresets">ACCESOS RÁPIDOS</sys:String>
+    <sys:String x:Key="Str_AlarmFecha">FECHA</sys:String>
+    <sys:String x:Key="Str_AlarmHora">HORA Y MINUTO</sys:String>
+    <sys:String x:Key="Str_AlarmDuracion">DURACIÓN DEL SONIDO</sys:String>
+    <sys:String x:Key="Str_AlarmSonido">SONIDO DE ALERTA</sys:String>
+    <sys:String x:Key="Str_AlarmBtnExaminar">Examinar...</sys:String>
+    <sys:String x:Key="Str_AlarmBtnCancelar">Cancelar</sys:String>
+    <sys:String x:Key="Str_AlarmBtnGuardar">Guardar Alarma</sys:String>
+    <sys:String x:Key="Str_AlarmBtnDesactivar">Desactivar</sys:String>
+
+</ResourceDictionary>

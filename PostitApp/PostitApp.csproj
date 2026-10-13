@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>TopAppMemo</AssemblyName>
+    <RootNamespace>PostitApp</RootNamespace>
+    <Product>TopApp Memo</Product>
+    <Version>1.0.0</Version>
+    <Authors>Tomas Folgado</Authors>
+    <Description>TopApp Memo - Notas rapidas para Windows</Description>
+    <ApplicationIcon>Assets\Icons\app.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+    <PackageReference Include="NAudio" Version="2.2.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Drawing.Common" Version="8.0.0" />
+    <PackageReference Include="System.Speech" Version="10.0.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Backgrounds\posit_yellow.png" />
+    <Resource Include="Assets\Backgrounds\posit_blue.png" />
+    <Resource Include="Assets\Backgrounds\posit_green.png" />
+    <Resource Include="Assets\Backgrounds\posit_red.png" />
+    <Resource Include="Assets\Backgrounds\posit_purple.png" />
+    <Resource Include="Assets\Backgrounds\posit_orange.png" />
+    <Resource Include="Assets\Backgrounds\posit_cyan.png" />
+    <Resource Include="Assets\Backgrounds\posit_white.png" />
+    <Resource Include="Assets\Icons\app.ico" />
+    <Resource Include="Assets\Icons\app.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Data\notes.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>
