@@ -1,140 +1,133 @@
-# 📌 TopApp Memo — Quick Sticky Notes for Windows
+# TopApp Memo
 
 <div align="center">
 
-![Platform](https://img.shields.io/badge/Platform-Windows%2010%20%2F%2011-blue.svg?style=for-the-badge&logo=windows)
-![.NET](https://img.shields.io/badge/.NET-8.0%20WPF-512BD4.svg?style=for-the-badge&logo=dotnet)
-![Language](https://img.shields.io/badge/Language-C%23-239120.svg?style=for-the-badge&logo=c-sharp)
-![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Free%20%26%20Open%20Source-orange.svg?style=for-the-badge)
+![Platform](https://img.shields.io/badge/Platform-Windows%2010%20%2F%2011-blue.svg?style=flat-square&logo=windows)
+![.NET](https://img.shields.io/badge/.NET-8.0%20WPF-512BD4.svg?style=flat-square&logo=dotnet)
+![Language](https://img.shields.io/badge/Language-C%23-239120.svg?style=flat-square&logo=c-sharp)
+![License](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Free%20%26%20Open%20Source-orange.svg?style=flat-square)
 
-**A modern, lightweight, and versatile sticky notes application for Windows.**  
-*Una aplicación moderna, ligera y versátil de notas adhesivas para Windows.*
+**A modern, lightweight sticky notes application for Windows.**  
+*Una aplicación moderna y ligera de notas adhesivas para Windows.*
 
-[English](#-english) • [Español](#-español) • [Installation & Build](#-build-and-run) • [License](#-license)
+[English](#english) • [Español](#español) • [Screenshots](#screenshots) • [Build & Run](#build-and-run) • [License](#license)
 
 </div>
 
 ---
 
-## 📸 Screenshots / Capturas
+## Screenshots
 
-| 🗂️ Control Panel & Note Options | 🔔 Scheduled Alarms & Reminders |
+| Control Panel & Note Options | Scheduled Alarms & Reminders |
 |:---:|:---:|
 | ![Note Options](docs/screenshots/options_and_notes.png) | ![Alarm Configuration](docs/screenshots/alarm_reminder.png) |
 
-| 🎙️ Voice Memos & Autonomous Audio | ❓ Help Center & User Guide |
+| Voice Memos & Audio Recording | Help Center & Shortcuts |
 |:---:|:---:|
 | ![Voice Memo](docs/screenshots/voice_memo.png) | ![Help Center](docs/screenshots/help_center.png) |
 
 ---
 
-## 🇬🇧 English
+## English
 
-### ✨ Overview
-**TopApp Memo** is a feature-rich desktop sticky notes manager crafted with WPF (.NET 8). Designed for productivity, it combines the simplicity of physical post-it notes with digital superpowers: audio memos, speech-to-text dictation, alarms, freehand drawing, and a unified control panel.
+### Overview
+**TopApp Memo** is a desktop sticky notes manager built with WPF and .NET 8. Designed for focus and productivity, it combines the tactile simplicity of physical notes with digital conveniences such as audio memos, speech-to-text dictation, scheduled alarms, digital ink, and a unified control panel.
 
-### 🚀 Key Features
+### Features
 
-- **🌐 Instant Bilingual Support**: Switch seamlessly between **English** and **Spanish** (`ES` / `EN` toggle in the header).
-- **📌 Always on Top & Docking**: Pin notes above all other windows or keep them subtly in the background.
-- **🎨 8 Post-it Colors & Opacity**: Yellow, Blue, Green, Red, Purple, Orange, Cyan, and White with custom opacity and tint adjustments.
-- **✏️ Digital Ink & Drawing Canvas**: Sketch, scribble, or highlight handwritten diagrams directly on your notes.
-- **🎙️ Voice Memos & Autonomous Audio**: Record and play audio memos attached to any note with progress indicators.
-- **🗣️ Speech-to-Text Dictation**: Speak and let the app transcribe your thoughts into rich text automatically.
-- **⏰ Scheduled Alarms & Reminders**: Set alarms with customizable duration and notification sounds.
-- **🗂️ Central Control Panel**:
-  - Live metric counter (Total, Visible, Hidden, With Audio, With Alarm).
-  - Instant real-time search across all notes.
-  - Quick filter chips (All, Visible, Hidden, Audio, Alarm).
-  - Bulk actions: Show all, Hide all, Save all.
-- **⌨️ Keyboard Shortcuts**: Fast shortcuts for formatting (`Ctrl+B`, `Ctrl+I`, `Ctrl+U`), saving (`Ctrl+S`), and quick exit (`Esc`).
+- **Bilingual Interface**: Full English and Spanish localization with instant runtime switching (`ES` / `EN` toggle).
+- **Always on Top & Docking**: Pin notes above other windows or keep them on the desktop workspace.
+- **Palette & Opacity**: 8 curated post-it colors with fine-grained transparency and color intensity sliders.
+- **Digital Ink**: Freehand sketching, diagrams, and handwriting directly on the canvas.
+- **Voice Notes**: Integrated audio memo recorder and player attached directly to notes.
+- **Speech-to-Text**: Autonomous speech recognition for real-time dictation into the note editor.
+- **Scheduled Alarms**: Precise date/time alarms with sound notifications and quick presets (+15m, +1h, tomorrow).
+- **Central Control Panel**: Live counters, instant search, status filtering, and bulk management.
+- **Keyboard Shortcuts**: Text formatting (`Ctrl+B`, `Ctrl+I`, `Ctrl+U`), saving (`Ctrl+S`), and navigation (`Esc`).
 
 ---
 
-## 🇪🇸 Español
+## Español
 
-### ✨ Descripción
-**TopApp Memo** es un gestor de notas adhesivas moderno y de alto rendimiento desarrollado en WPF (.NET 8). Diseñado para maximizar tu productividad, combina la inmediatez de los post-its tradicionales con funciones avanzadas: notas de voz, dictado inteligente, recordatorios con alarma, dibujo a mano alzada y un panel de control unificado.
+### Descripción
+**TopApp Memo** es un gestor de notas adhesivas moderno y ligero desarrollado en WPF (.NET 8). Diseñado para maximizar la productividad diaria, combina la inmediatez de los post-its con funciones digitales avanzadas: notas de voz, dictado inteligente, recordatorios con alarma, dibujo a mano alzada y panel centralizado.
 
-### 🚀 Características Principales
+### Características
 
-- **🌐 Soporte Bilingüe Instantáneo**: Alterna en tiempo real entre **Español** e **Inglés** con el selector (`ES` / `EN`) en la cabecera.
-- **📌 Siempre al Frente (Always on Top)**: Fija notas por encima de navegadores y aplicaciones con un solo clic.
-- **🎨 8 Colores de Post-it y Opacidad**: Amarillo, Azul, Verde, Rojo, Púrpura, Naranja, Cian y Blanco, con control de transparencia e intensidad.
-- **✏️ Tinta Digital y Modo Dibujo**: Dibuja esquemas, firmas o bocetos a mano alzada sobre la nota.
-- **🎙️ Notas de Voz Autónomas**: Graba y reproduce mensajes de audio vinculados a cada nota.
-- **🗣️ Dictado por Voz Inteligente**: Dicta por micrófono para transcribir texto automáticamente.
-- **⏰ Alarmas y Recordatorios**: Configura avisos con presets rápidos (+15m, +1h, mañana) y alertas sonoras.
-- **🗂️ Panel de Control Unificado**:
-  - Contadores en tiempo real (Total, Visibles, Ocultas, Audio, Alarma).
-  - Buscador instantáneo de texto en todas las notas.
-  - Filtros por categoría y estado.
-  - Acciones globales: Guardar todo, Mostrar todas, Ocultar todas.
-- **⌨️ Atajos de Teclado**: Negrita (`Ctrl+B`), cursiva (`Ctrl+I`), subrayado (`Ctrl+U`), guardar (`Ctrl+S`).
+- **Soporte Bilingüe**: Traducción completa al español e inglés con cambio dinámico e instantáneo (`ES` / `EN`).
+- **Siempre al Frente**: Fija notas flotantes por encima de otras aplicaciones con un clic.
+- **Paleta y Opacidad**: 8 colores de post-it con ajuste de transparencia e intensidad de color.
+- **Tinta Digital**: Modo de dibujo libre para esquemas, firmas y notas manuscritas.
+- **Notas de Voz**: Grabación directa por micrófono y reproductor integrado en cada nota.
+- **Dictado por Voz**: Transcripción de voz a texto en tiempo real directamente en el editor.
+- **Alarmas y Recordatorios**: Programación por fecha/hora con alertas sonoras y accesos rápidos (+15 min, +1 hora, mañana).
+- **Panel de Control**: Contadores en vivo, buscador en tiempo real, filtros y acciones globales.
+- **Atajos de Teclado**: Formato (`Ctrl+B`, `Ctrl+I`, `Ctrl+U`), guardado (`Ctrl+S`) y cierre rápido (`Esc`).
 
 ---
 
-## 🛠️ Build and Run
+## Build and Run
 
 ### Prerequisites
-- Windows 10 (version 1809+) or Windows 11.
-- [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0).
+- Windows 10 (version 1809+) or Windows 11
+- [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
 
 ### Build from Source
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/topapp-memo.git
-cd topapp-memo/PostitApp
+git clone https://github.com/tomasfolgado/TopApp-Memo.git
+cd TopApp-Memo/PostitApp
 
 # Restore and build in Release mode
 dotnet build -c Release
 
-# Publish self-contained or framework-dependent
+# Publish self-contained executable
 dotnet publish -c Release -o ../publish
 ```
 
 ### Run
-Launch `TopAppMemo.exe` from `PostitApp/bin/Release/net8.0-windows/` or `publish/`.
+Launch `TopAppMemo.exe` from `publish/` or `PostitApp/bin/Release/net8.0-windows/`.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
-topapp-memo/
+TopApp-Memo/
 ├── PostitApp/
-│   ├── Assets/              # Icons, post-it textures, application resources
-│   ├── Data/                # Local data storage (notes.json, settings.json)
-│   ├── Helpers/             # Win32 window management, MVVM RelayCommands
+│   ├── Assets/              # Icons and application resources
+│   ├── Data/                # Local storage (notes.json, settings.json)
+│   ├── Helpers/             # Win32 window helpers, MVVM RelayCommands
 │   ├── Models/              # Note data model
-│   ├── Resources/           # Localization strings (Strings.es.xaml, Strings.en.xaml)
-│   ├── Services/            # Note persistence, NAudio recorder, Speech, Localization
+│   ├── Resources/           # Localization dictionaries (Strings.es.xaml, Strings.en.xaml)
+│   ├── Services/            # Note persistence, audio recorder, speech, localization
 │   ├── ViewModels/          # MainViewModel, NoteViewModel
 │   ├── Views/               # ManagerWindow, NoteWindow, AlarmWindow, HelpWindow
 │   └── PostitApp.csproj     # .NET 8 WPF Project specification
-├── .gitignore               # Clean GitHub ignore patterns
-├── LICENSE                  # Open source MIT license
+├── docs/screenshots/        # UI showcase screenshots
+├── .gitignore               # Visual Studio & .NET ignore patterns
+├── LICENSE                  # MIT License
 └── README.md                # Project documentation
 ```
 
 ---
 
-## ⌨️ Keyboard Shortcuts / Atajos de Teclado
+## Keyboard Shortcuts / Atajos
 
-| Shortcut / Atajo | Function (English) | Función (Español) |
+| Shortcut | Action (English) | Acción (Español) |
 |---|---|---|
-| `Ctrl + N` | New sticky note | Crear nueva nota adhesiva |
-| `Ctrl + S` | Save all notes to disk | Guardar todas las notas en disco |
-| `Ctrl + B` | Bold text | Formato de texto en Negrita |
-| `Ctrl + I` | Italic text | Formato de texto en Cursiva |
-| `Ctrl + U` | Underline text | Formato de texto Subrayado |
-| `Esc` | Close dialog or help center | Cerrar diálogo o centro de ayuda |
+| `Ctrl + N` | New sticky note | Crear nueva nota |
+| `Ctrl + S` | Save notes to disk | Guardar notas en disco |
+| `Ctrl + B` | Bold formatting | Formato negrita |
+| `Ctrl + I` | Italic formatting | Formato cursiva |
+| `Ctrl + U` | Underline formatting | Formato subrayado |
+| `Esc` | Close popup or help | Cerrar ventana o diálogo |
 
 ---
 
-## 📄 License
+## License
 
-This project is licensed under the **MIT License** — free and open source for everyone. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License** — free and open source. See the [LICENSE](LICENSE) file for details.
 
-Developed with ❤️ by **Tomas Folgado**.
+Developed by **Tomas Folgado**.
