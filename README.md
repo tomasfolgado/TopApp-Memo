@@ -19,13 +19,13 @@
 
 ## Screenshots
 
-| Control Panel & Note Options | Scheduled Alarms & Reminders |
+| Desktop Sticky Notes & Creative Tools | Unified Control Panel & Note Management |
 |:---:|:---:|
-| ![Note Options](docs/screenshots/options_and_notes.png) | ![Alarm Configuration](docs/screenshots/alarm_reminder.png) |
+| ![Desktop Sticky Notes & Creative Tools](docs/screenshots/desktop_notes_features.jpg) | ![Unified Control Panel & Note Management](docs/screenshots/control_panel_overview.jpg) |
 
-| Voice Memos & Audio Recording | Help Center & Shortcuts |
+| Help Center & Shortcuts Guide | Search, Filters & Language Switcher |
 |:---:|:---:|
-| ![Voice Memo](docs/screenshots/voice_memo.png) | ![Help Center](docs/screenshots/help_center.png) |
+| ![Help Center & Shortcuts Guide](docs/screenshots/help_center_guide.jpg) | ![Search, Filters & Language Switcher](docs/screenshots/search_filters_bilingual.jpg) |
 
 ---
 

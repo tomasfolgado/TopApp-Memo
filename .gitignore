@@ -43,3 +43,6 @@ publish/Data/*.wav
 
 # Archives
 *.zip
+
+# Local staging assets
+imagenes/
