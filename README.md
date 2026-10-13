@@ -2,6 +2,8 @@
 
 <div align="center">
 
+[![Download for Windows](https://img.shields.io/badge/Download%20for%20Windows-v2.0.0%20%28.zip%20%2F%20.exe%29-00e5db?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/tomasfolgado/TopApp-Memo/releases/latest)
+
 ![Platform](https://img.shields.io/badge/Platform-Windows%2010%20%2F%2011-blue.svg?style=flat-square&logo=windows)
 ![.NET](https://img.shields.io/badge/.NET-8.0%20WPF-512BD4.svg?style=flat-square&logo=dotnet)
 ![Language](https://img.shields.io/badge/Language-C%23-239120.svg?style=flat-square&logo=c-sharp)
@@ -12,7 +14,7 @@
 **A modern, lightweight sticky notes application for Windows.**  
 *Una aplicación moderna y ligera de notas adhesivas para Windows.*
 
-[English](#english) • [Español](#español) • [Screenshots](#screenshots) • [Security](#security--verification) • [Build & Run](#build-and-run) • [License](#license)
+[Download](#quick-download--installation) • [Screenshots](#screenshots) • [English](#english) • [Español](#español) • [Security](#security--verification) • [Build & Run](#build-and-run) • [License](#license)
 
 </div>
 
@@ -27,6 +29,16 @@
 | Help Center & Shortcuts Guide | Search, Filters & Language Switcher |
 |:---:|:---:|
 | ![Help Center & Shortcuts Guide](docs/screenshots/help_center_guide.jpg) | ![Search, Filters & Language Switcher](docs/screenshots/search_filters_bilingual.jpg) |
+
+---
+
+## Quick Download & Installation
+
+1. Download the latest release package:  
+   👉 **[TopAppMemo-v2.0.0-Windows.zip (Direct Download)](https://github.com/tomasfolgado/TopApp-Memo/releases/latest/download/TopAppMemo-v2.0.0-Windows.zip)**  
+   *(or browse all release assets at the [Releases Page](https://github.com/tomasfolgado/TopApp-Memo/releases/latest))*
+2. Extract the `.zip` archive into any folder on your computer.
+3. Launch `TopAppMemo.exe` (standalone portable app, no installer required).
 
 ---
 
@@ -53,6 +65,14 @@
 
 ### Descripción
 **TopApp Memo** es un gestor de notas adhesivas moderno y ligero desarrollado en WPF (.NET 8). Diseñado para maximizar la productividad diaria, combina la inmediatez de los post-its con funciones digitales avanzadas: notas de voz, dictado inteligente, recordatorios con alarma, dibujo a mano alzada y panel centralizado.
+
+### Descarga e Instalación Rápida
+
+1. Descarga el paquete ejecutable de la última versión:  
+   👉 **[TopAppMemo-v2.0.0-Windows.zip (Descarga Directa)](https://github.com/tomasfolgado/TopApp-Memo/releases/latest/download/TopAppMemo-v2.0.0-Windows.zip)**  
+   *(o visita la [Página de Releases](https://github.com/tomasfolgado/TopApp-Memo/releases/latest))*
+2. Descomprímelo en cualquier carpeta de tu ordenador.
+3. Ejecuta `TopAppMemo.exe` (portátil, listo para usar sin instalación previa).
 
 ### Características
 
