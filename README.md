@@ -17,6 +17,18 @@
 
 ---
 
+## 📸 Screenshots / Capturas
+
+| 🗂️ Control Panel & Note Options | 🔔 Scheduled Alarms & Reminders |
+|:---:|:---:|
+| ![Note Options](docs/screenshots/options_and_notes.png) | ![Alarm Configuration](docs/screenshots/alarm_reminder.png) |
+
+| 🎙️ Voice Memos & Autonomous Audio | ❓ Help Center & User Guide |
+|:---:|:---:|
+| ![Voice Memo](docs/screenshots/voice_memo.png) | ![Help Center](docs/screenshots/help_center.png) |
+
+---
+
 ## 🇬🇧 English
 
 ### ✨ Overview
