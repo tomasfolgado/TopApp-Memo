@@ -31,21 +31,22 @@
     <sys:String x:Key="Str_FiltroTodas">All</sys:String>
     <sys:String x:Key="Str_FiltroVisibles">Visible</sys:String>
     <sys:String x:Key="Str_FiltroOcultas">Hidden</sys:String>
-    <sys:String x:Key="Str_FiltroAudio">With Audio</sys:String>
-    <sys:String x:Key="Str_FiltroAlarma">With Alarm</sys:String>
+    <sys:String x:Key="Str_FiltroAudio">🎙 With Audio</sys:String>
+    <sys:String x:Key="Str_FiltroAlarma">🔔 With Alarm</sys:String>
     <sys:String x:Key="Str_MostrarTodas">Show All</sys:String>
     <sys:String x:Key="Str_OcultarTodas">Hide All</sys:String>
 
-    <!-- Note Cards -->
-    <sys:String x:Key="Str_CardMostrar">Show note</sys:String>
-    <sys:String x:Key="Str_CardOcultar">Hide note</sys:String>
-    <sys:String x:Key="Str_CardAudioPlay">Play audio</sys:String>
-    <sys:String x:Key="Str_CardAudioStop">Stop audio</sys:String>
-    <sys:String x:Key="Str_CardDuplicar">Duplicate note</sys:String>
-    <sys:String x:Key="Str_CardEliminar">Delete note</sys:String>
-    <sys:String x:Key="Str_CardEstadoVisible">Visible</sys:String>
+    <!-- Note Cards in Control Panel -->
+    <sys:String x:Key="Str_CardEstadoVisible">On Desktop</sys:String>
     <sys:String x:Key="Str_CardEstadoOculta">Hidden</sys:String>
     <sys:String x:Key="Str_CardSinTexto">(Empty note)</sys:String>
+    <sys:String x:Key="Str_CardTooltipAbrir">Open / Bring to front</sys:String>
+    <sys:String x:Key="Str_CardTooltipAudio">Listen to voice memo</sys:String>
+    <sys:String x:Key="Str_CardTooltipVisibilidad">Toggle visibility</sys:String>
+    <sys:String x:Key="Str_CardTooltipEliminar">Delete permanently</sys:String>
+    <sys:String x:Key="Str_EmptyNoNotas">No notes found</sys:String>
+    <sys:String x:Key="Str_EmptySugerencia">Try another search or create a new sticky note.</sys:String>
+    <sys:String x:Key="Str_EmptyCrear">+ Create new note</sys:String>
 
     <!-- Footer -->
     <sys:String x:Key="Str_PieAutoguardado">Auto-save enabled</sys:String>
@@ -60,6 +61,7 @@
     <sys:String x:Key="Str_HelpWinTitle">TopApp Memo — Help Center</sys:String>
     <sys:String x:Key="Str_HelpHeaderTitle">Help Center &amp; User Guide</sys:String>
     <sys:String x:Key="Str_HelpHeaderSubtitle">Discover all features, shortcuts and tips for TopApp Memo</sys:String>
+    
     <sys:String x:Key="Str_HelpSec1Title">Note &amp; Screen Management</sys:String>
     <sys:String x:Key="Str_HelpSec1Item1">Create new note: Click + New Note in the Control Panel or the + button on any note.</sys:String>
     <sys:String x:Key="Str_HelpSec1Item2">Always on Top (Pin): Click the pin icon to keep the note floating on top of all other windows.</sys:String>
@@ -67,17 +69,17 @@
     <sys:String x:Key="Str_HelpSec1Item4">Move &amp; Resize: Drag the note by its top header. Resize by dragging the bottom-right corner.</sys:String>
 
     <sys:String x:Key="Str_HelpSec2Title">Colors, Formatting &amp; Freehand Drawing</sys:String>
-    <sys:String x:Key="Str_HelpSec2Item1">8 Sticky Note Colors: Choose between Yellow, Blue, Green, Red, Purple, Orange, Cyan, or White.</sys:String>
-    <sys:String x:Key="Str_HelpSec2Item2">Opacity &amp; Intensity: Adjust window transparency and color intensity.</sys:String>
+    <sys:String x:Key="Str_HelpSec2Item1">8 Sticky Note Colors: In the tool menu (3-lines icon), choose between Yellow, Blue, Green, Red, Purple, Orange, Cyan, or White.</sys:String>
+    <sys:String x:Key="Str_HelpSec2Item2">Opacity &amp; Intensity: Adjust transparency to blend with the wallpaper or boost color vividness.</sys:String>
     <sys:String x:Key="Str_HelpSec2Item3">Ink / Freehand Drawing: Click the pen icon to sketch, draw diagrams, or handwrite notes using digital ink.</sys:String>
 
     <sys:String x:Key="Str_HelpSec3Title">Voice Notes &amp; Smart Dictation</sys:String>
-    <sys:String x:Key="Str_HelpSec3Item1">Record Voice Memo: Record voice clips directly attached to your note.</sys:String>
-    <sys:String x:Key="Str_HelpSec3Item2">Playback from Panel: Listen to recorded audio directly from the control panel grid.</sys:String>
-    <sys:String x:Key="Str_HelpSec3Item3">Voice Dictation: Speak and the app automatically transcribes your voice into rich text.</sys:String>
+    <sys:String x:Key="Str_HelpSec3Item1">Record Voice Memo: Click the microphone in the header to record an audio message attached to that note.</sys:String>
+    <sys:String x:Key="Str_HelpSec3Item2">Playback from Panel: Listen to recorded audio directly from the control panel grid without opening the note.</sys:String>
+    <sys:String x:Key="Str_HelpSec3Item3">Voice Dictation: Speak and the app automatically transcribes your voice into text inside the note.</sys:String>
 
     <sys:String x:Key="Str_HelpSec4Title">Scheduled Alarms &amp; Reminders</sys:String>
-    <sys:String x:Key="Str_HelpSec4Item1">Set Reminder: Use quick presets (+15 min, +1 hour, Tomorrow) or specify an exact date and time.</sys:String>
+    <sys:String x:Key="Str_HelpSec4Item1">Set Reminder: Click the bell on the note to set an exact date/time or use quick presets (+15 min, +1 hour, Tomorrow 09:00).</sys:String>
     <sys:String x:Key="Str_HelpSec4Item2">Visual &amp; Sound Alerts: Onscreen pop-up alert and notification sound when the timer expires.</sys:String>
 
     <sys:String x:Key="Str_HelpSec5Title">Keyboard Shortcuts &amp; Productivity</sys:String>
@@ -91,25 +93,97 @@
     <sys:String x:Key="Str_HelpPie">TopApp Memo • Quick notes and reminders for Windows</sys:String>
 
     <!-- Note Window (NoteWindow) -->
-    <sys:String x:Key="Str_NoteNueva">New note</sys:String>
-    <sys:String x:Key="Str_NoteOpciones">Options &amp; colors</sys:String>
-    <sys:String x:Key="Str_NoteAudio">Voice note / Dictation</sys:String>
-    <sys:String x:Key="Str_NoteAlarma">Configure alarm</sys:String>
-    <sys:String x:Key="Str_NoteDibujo">Freehand drawing mode</sys:String>
-    <sys:String x:Key="Str_NotePin">Pin to top (Always on top)</sys:String>
-    <sys:String x:Key="Str_NoteOcultar">Hide note</sys:String>
-    <sys:String x:Key="Str_NoteCerrar">Delete note</sys:String>
+    <sys:String x:Key="Str_NotePorAutor">by Tomas Folgado</sys:String>
+    <sys:String x:Key="Str_NoteColorFondo">BACKGROUND COLOR</sys:String>
+    <sys:String x:Key="Str_NoteIntensidad">COLOR INTENSITY</sys:String>
+    <sys:String x:Key="Str_NotePastel">Pastel (30%)</sys:String>
+    <sys:String x:Key="Str_NoteMedio">Medium (65%)</sys:String>
+    <sys:String x:Key="Str_NoteVivo">Vivid (100%)</sys:String>
+    <sys:String x:Key="Str_NoteOpacidad">OPACITY</sys:String>
+    <sys:String x:Key="Str_NoteTipografia">TYPOGRAPHY</sys:String>
+    <sys:String x:Key="Str_NoteSiempreAlFrente">Always on top (Topmost)</sys:String>
+    <sys:String x:Key="Str_NoteOcultarEscritorio">Hide from desktop</sys:String>
+    <sys:String x:Key="Str_NoteEliminarDefinitiva">Delete note permanently</sys:String>
+    
+    <sys:String x:Key="Str_NoteTooltipOpciones">Note options</sys:String>
+    <sys:String x:Key="Str_NoteTooltipPin">Pin to front</sys:String>
+    <sys:String x:Key="Str_NoteTooltipAudio">Autonomous voice memo</sys:String>
+    <sys:String x:Key="Str_NoteTooltipNueva">New note (+)</sys:String>
+    <sys:String x:Key="Str_NoteTooltipOcultar">Hide note</sys:String>
+    <sys:String x:Key="Str_NoteTooltipEliminar">Delete note</sys:String>
+    <sys:String x:Key="Str_NoteTooltipDibujo">Freehand drawing</sys:String>
+    <sys:String x:Key="Str_NoteTooltipBorrarTrazos">Clear all strokes</sys:String>
+    <sys:String x:Key="Str_NoteTooltipPlayAudio">Play attached audio</sys:String>
+
+    <!-- Audio Panel in NoteWindow -->
+    <sys:String x:Key="Str_AudioGrabarMensaje">Record voice message</sys:String>
+    <sys:String x:Key="Str_AudioTranscribir">✍️ Transcribe speech to text</sys:String>
+    <sys:String x:Key="Str_AudioTranscribirTooltip">Converts what you say into text directly inside the note</sys:String>
+    <sys:String x:Key="Str_AudioCerrarTooltip">Close panel</sys:String>
+    <sys:String x:Key="Str_AudioListo">Done</sys:String>
+    <sys:String x:Key="Str_AudioGuardarTooltip">Save audio</sys:String>
+    <sys:String x:Key="Str_AudioDescartarTooltip">Discard recording</sys:String>
+    <sys:String x:Key="Str_AudioTranscribiendo">Transcribing speech to text live...</sys:String>
+    <sys:String x:Key="Str_AudioPlayPausaTooltip">Play / Pause</sys:String>
+    <sys:String x:Key="Str_AudioRegrabarTooltip">Record new message</sys:String>
+    <sys:String x:Key="Str_AudioEliminarTooltip">Delete audio</sys:String>
+    <sys:String x:Key="Str_AudioOcultarPlayer">Hide player</sys:String>
+    <sys:String x:Key="Str_NoteTooltipIniciarRec">Start voice recording</sys:String>
+
+    <!-- NoteWindow C# Messages -->
+    <sys:String x:Key="Str_MsgCerrarNotaPregunta">Do you want to permanently delete this note?\n\n(Click NO if you only want to hide it)</sys:String>
+    <sys:String x:Key="Str_MsgCerrarNotaTitulo">TopApp Memo — Close Note</sys:String>
+    <sys:String x:Key="Str_MsgEliminarNotaPregunta">Delete this note permanently?</sys:String>
+    <sys:String x:Key="Str_MsgEliminarNotaTitulo">Delete Note</sys:String>
+    <sys:String x:Key="Str_MsgAudioNoExiste">Audio file does not exist on disk.</sys:String>
+    <sys:String x:Key="Str_MsgAudioAviso">Notice</sys:String>
+    <sys:String x:Key="Str_MsgEliminarAudioPregunta">Delete this voice message?</sys:String>
+    <sys:String x:Key="Str_MsgEliminarAudioTitulo">Confirm</sys:String>
+    <sys:String x:Key="Str_MsgAlarmaDesactivar">Do you want to DISABLE the alarm?\n(Click NO to reschedule it)</sys:String>
+    <sys:String x:Key="Str_MsgAlarmaActivadaExito">Alarm set successfully</sys:String>
+    <sys:String x:Key="Str_MsgAlarmaRecordatorio">🔔 ALARM REMINDER!</sys:String>
+    <sys:String x:Key="Str_SinAlarma">No alarm</sys:String>
+    <sys:String x:Key="Str_ConAlarmaPrefix">Alarm</sys:String>
 
     <!-- Alarm Window (AlarmWindow) -->
     <sys:String x:Key="Str_AlarmTitle">Configure Alarm</sys:String>
     <sys:String x:Key="Str_AlarmPresets">QUICK PRESETS</sys:String>
+    <sys:String x:Key="Str_Alarm15Min">+15 min</sys:String>
+    <sys:String x:Key="Str_Alarm30Min">+30 min</sys:String>
+    <sys:String x:Key="Str_Alarm1Hora">+1 hour</sys:String>
+    <sys:String x:Key="Str_Alarm3Horas">+3 hours</sys:String>
+    <sys:String x:Key="Str_AlarmTomorrow">Tomorrow 09:00</sys:String>
     <sys:String x:Key="Str_AlarmFecha">DATE</sys:String>
-    <sys:String x:Key="Str_AlarmHora">TIME &amp; MINUTE</sys:String>
-    <sys:String x:Key="Str_AlarmDuracion">SOUND DURATION</sys:String>
-    <sys:String x:Key="Str_AlarmSonido">ALERT SOUND</sys:String>
+    <sys:String x:Key="Str_AlarmHora">TIME &amp; MINUTES</sys:String>
+    <sys:String x:Key="Str_AlarmDuracion">ALERT DURATION</sys:String>
+    <sys:String x:Key="Str_AlarmSegundos">seconds</sys:String>
+    <sys:String x:Key="Str_AlarmSonido">ALARM SOUND</sys:String>
+    <sys:String x:Key="Str_AlarmSonidoSistema">System sound</sys:String>
+    <sys:String x:Key="Str_AlarmBtnProbar">Test</sys:String>
     <sys:String x:Key="Str_AlarmBtnExaminar">Browse...</sys:String>
     <sys:String x:Key="Str_AlarmBtnCancelar">Cancel</sys:String>
+    <sys:String x:Key="Str_AlarmBtnActivar">Set Alarm</sys:String>
     <sys:String x:Key="Str_AlarmBtnGuardar">Save Alarm</sys:String>
     <sys:String x:Key="Str_AlarmBtnDesactivar">Disable</sys:String>
+    <sys:String x:Key="Str_AlarmDialogTitle">Select alarm sound</sys:String>
+    <sys:String x:Key="Str_AlarmDialogFiltro">WAV Audio Files (*.wav)|*.wav|All Files (*.*)|*.*</sys:String>
+    <sys:String x:Key="Str_AlarmErrorReproducir">Could not play sound</sys:String>
+    <sys:String x:Key="Str_AlarmValidaFecha">Please select a date.</sys:String>
+    <sys:String x:Key="Str_AlarmValidaHora">Enter valid hours and minutes (00-23 : 00-59).</sys:String>
+    <sys:String x:Key="Str_AlarmValidaFutura">Alarm date and time must be in the future.</sys:String>
+    <sys:String x:Key="Str_HelpTooltipCerrar">Close (Esc)</sys:String>
+
+    <!-- Colors and Strokes -->
+    <sys:String x:Key="Str_ColorAmarillo">Yellow</sys:String>
+    <sys:String x:Key="Str_ColorAzul">Blue</sys:String>
+    <sys:String x:Key="Str_ColorVerde">Green</sys:String>
+    <sys:String x:Key="Str_ColorRosa">Pink</sys:String>
+    <sys:String x:Key="Str_ColorMorado">Purple</sys:String>
+    <sys:String x:Key="Str_ColorNaranja">Orange</sys:String>
+    <sys:String x:Key="Str_ColorCyan">Cyan</sys:String>
+    <sys:String x:Key="Str_ColorBlanco">White</sys:String>
+    <sys:String x:Key="Str_ColorNegro">Black</sys:String>
+    <sys:String x:Key="Str_ColorRojo">Red</sys:String>
+    <sys:String x:Key="Str_ColorResaltador">Highlighter</sys:String>
 
 </ResourceDictionary>

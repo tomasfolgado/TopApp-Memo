@@ -187,12 +187,12 @@
                         </Grid.ColumnDefinitions>
 
                         <!-- Menú / Opciones -->
-                        <Button x:Name="BtnMenu" Grid.Column="0" Style="{StaticResource BtnHeader}" ToolTip="Opciones de la nota" Click="BtnMenu_Click">
+                        <Button x:Name="BtnMenu" Grid.Column="0" Style="{StaticResource BtnHeader}" ToolTip="{DynamicResource Str_NoteTooltipOpciones}" Click="BtnMenu_Click">
                             <Path Data="{StaticResource IconMenuGeo}" Stroke="#1E293B" StrokeThickness="2.2" StrokeStartLineCap="Round" StrokeEndLineCap="Round" Width="14" Height="14" Stretch="Uniform"/>
                         </Button>
 
                         <!-- Pin / Siempre al frente (1-clic directo) -->
-                        <Button x:Name="BtnPin" Grid.Column="1" Style="{StaticResource BtnHeader}" ToolTip="Fijar al frente" Click="BtnPin_Click">
+                        <Button x:Name="BtnPin" Grid.Column="1" Style="{StaticResource BtnHeader}" ToolTip="{DynamicResource Str_NoteTooltipPin}" Click="BtnPin_Click">
                             <Path Data="{StaticResource IconPinGeo}" Fill="{Binding BrushPin}" Width="14" Height="14" Stretch="Uniform"/>
                         </Button>
 
@@ -217,7 +217,7 @@
                         </Button>
 
                         <!-- Audio Autónomo (Micrófono) -->
-                        <Button x:Name="BtnAudio" Grid.Column="3" Style="{StaticResource BtnHeader}" ToolTip="Mensaje de voz autónomo" Click="BtnAudio_Click">
+                        <Button x:Name="BtnAudio" Grid.Column="3" Style="{StaticResource BtnHeader}" ToolTip="{DynamicResource Str_NoteTooltipAudio}" Click="BtnAudio_Click">
                             <Grid>
                                 <Path x:Name="PathIconMic" Data="{StaticResource IconMicGeo}" Fill="{Binding BrushMic}" Width="14" Height="14" Stretch="Uniform"/>
                                 <!-- Punto indicador de audio grabado -->
@@ -242,17 +242,17 @@
                         </Border>
 
                         <!-- Nueva nota -->
-                        <Button Grid.Column="5" Style="{StaticResource BtnHeader}" ToolTip="Nueva nota (+)" Command="{Binding NuevaNotaCmd}">
+                        <Button Grid.Column="5" Style="{StaticResource BtnHeader}" ToolTip="{DynamicResource Str_NoteTooltipNueva}" Command="{Binding NuevaNotaCmd}">
                             <Path Data="{StaticResource IconPlusGeo}" Stroke="#1E293B" StrokeThickness="2.4" StrokeStartLineCap="Round" StrokeEndLineCap="Round" Width="13" Height="13" Stretch="Uniform"/>
                         </Button>
 
                         <!-- Ocultar nota -->
-                        <Button Grid.Column="6" Style="{StaticResource BtnHeader}" ToolTip="Ocultar nota" Click="BtnOcultar_Click">
+                        <Button Grid.Column="6" Style="{StaticResource BtnHeader}" ToolTip="{DynamicResource Str_NoteTooltipOcultar}" Click="BtnOcultar_Click">
                             <Path Data="{StaticResource IconMinusGeo}" Stroke="#1E293B" StrokeThickness="2.4" StrokeStartLineCap="Round" StrokeEndLineCap="Round" Width="12" Height="12" Stretch="Uniform"/>
                         </Button>
 
                         <!-- Cerrar / Eliminar -->
-                        <Button Grid.Column="7" Style="{StaticResource BtnHeaderDanger}" ToolTip="Eliminar nota" Click="BtnCerrar_Click">
+                        <Button Grid.Column="7" Style="{StaticResource BtnHeaderDanger}" ToolTip="{DynamicResource Str_NoteTooltipEliminar}" Click="BtnCerrar_Click">
                             <Path Data="{StaticResource IconCloseGeo}" Stroke="#1E293B" StrokeThickness="2.2" StrokeStartLineCap="Round" StrokeEndLineCap="Round" Width="11" Height="11" Stretch="Uniform"/>
                         </Button>
                     </Grid>
@@ -281,7 +281,7 @@
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
 
-                            <Button x:Name="BtnIniciarGrabacion" Grid.Column="0" Width="34" Height="34" Cursor="Hand" Click="BtnIniciarGrabacion_Click" ToolTip="Iniciar grabación de voz">
+                            <Button x:Name="BtnIniciarGrabacion" Grid.Column="0" Width="34" Height="34" Cursor="Hand" Click="BtnIniciarGrabacion_Click" ToolTip="{DynamicResource Str_NoteTooltipIniciarRec}">
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">
                                         <Border x:Name="bordeRec" Background="#EF4444" CornerRadius="17">
@@ -300,13 +300,13 @@
                             </Button>
 
                             <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="10,0,0,0">
-                                <TextBlock Text="Grabar mensaje de voz" FontSize="11.5" FontWeight="SemiBold" Foreground="#0F172A"/>
-                                <CheckBox x:Name="ChkTranscribir" IsChecked="True" Margin="0,3,0,0" Cursor="Hand" ToolTip="Convierte lo que digas en texto directamente dentro de la nota">
-                                    <TextBlock Text="✍️ Transcribir voz a texto" FontSize="10.5" FontWeight="Medium" Foreground="#475569"/>
+                                <TextBlock Text="{DynamicResource Str_AudioGrabarMensaje}" FontSize="11.5" FontWeight="SemiBold" Foreground="#0F172A"/>
+                                <CheckBox x:Name="ChkTranscribir" IsChecked="True" Margin="0,3,0,0" Cursor="Hand" ToolTip="{DynamicResource Str_AudioTranscribirTooltip}">
+                                    <TextBlock Text="{DynamicResource Str_AudioTranscribir}" FontSize="10.5" FontWeight="Medium" Foreground="#475569"/>
                                 </CheckBox>
                             </StackPanel>
 
-                            <Button Grid.Column="2" Style="{StaticResource BtnHeader}" Click="BtnCerrarAudio_Click" ToolTip="Cerrar panel">
+                            <Button Grid.Column="2" Style="{StaticResource BtnHeader}" Click="BtnCerrarAudio_Click" ToolTip="{DynamicResource Str_AudioCerrarTooltip}">
                                 <Path Data="{StaticResource IconCloseGeo}" Stroke="#475569" StrokeThickness="2" Width="9" Height="9" Stretch="Uniform"/>
                             </Button>
                         </Grid>
@@ -349,13 +349,13 @@
 
                                 <!-- Botón Detener y Guardar -->
                                 <Button x:Name="BtnDetenerGrabacion" Grid.Column="2" Click="BtnDetenerGrabacion_Click"
-                                        Cursor="Hand" Margin="0,0,6,0" ToolTip="Guardar audio">
+                                        Cursor="Hand" Margin="0,0,6,0" ToolTip="{DynamicResource Str_AudioGuardarTooltip}">
                                     <Button.Template>
                                         <ControlTemplate TargetType="Button">
                                             <Border x:Name="bordeSave" Background="#10B981" CornerRadius="8" Padding="8,4">
                                                 <StackPanel Orientation="Horizontal">
                                                     <Path Data="{StaticResource IconStopGeo}" Fill="White" Width="9" Height="9" Stretch="Uniform" Margin="0,0,4,0" VerticalAlignment="Center"/>
-                                                    <TextBlock Text="Listo" FontSize="11" FontWeight="SemiBold" Foreground="White" VerticalAlignment="Center"/>
+                                                    <TextBlock Text="{DynamicResource Str_AudioListo}" FontSize="11" FontWeight="SemiBold" Foreground="White" VerticalAlignment="Center"/>
                                                 </StackPanel>
                                             </Border>
                                             <ControlTemplate.Triggers>
@@ -368,14 +368,14 @@
                                 </Button>
 
                                 <!-- Botón Cancelar -->
-                                <Button Grid.Column="3" Style="{StaticResource BtnHeaderDanger}" Click="BtnCancelarGrabacion_Click" ToolTip="Descartar grabación">
+                                <Button Grid.Column="3" Style="{StaticResource BtnHeaderDanger}" Click="BtnCancelarGrabacion_Click" ToolTip="{DynamicResource Str_AudioDescartarTooltip}">
                                     <Path Data="{StaticResource IconCloseGeo}" Stroke="#475569" StrokeThickness="2" Width="9" Height="9" Stretch="Uniform"/>
                                 </Button>
                             </Grid>
 
                             <!-- Sub-indicador de transcripción activa -->
                             <TextBlock x:Name="TxtIndicadorTranscribiendo" Grid.Row="1"
-                                       Text="Transcribiendo voz a texto en directo..."
+                                       Text="{DynamicResource Str_AudioTranscribiendo}"
                                        FontSize="10" FontWeight="Medium" Foreground="#4F46E5"
                                        HorizontalAlignment="Center" Margin="0,3,0,0" Visibility="Collapsed"/>
                         </Grid>
@@ -391,7 +391,7 @@
                             </Grid.ColumnDefinitions>
 
                             <!-- Botón Play/Pausa -->
-                            <Button x:Name="BtnPlayPausa" Grid.Column="0" Width="30" Height="30" Click="BtnPlayPausa_Click" Cursor="Hand" ToolTip="Reproducir / Pausar">
+                            <Button x:Name="BtnPlayPausa" Grid.Column="0" Width="30" Height="30" Click="BtnPlayPausa_Click" Cursor="Hand" ToolTip="{DynamicResource Str_AudioPlayPausaTooltip}">
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">
                                         <Border x:Name="bordePlay" Background="#3B82F6" CornerRadius="15">
@@ -427,17 +427,17 @@
                             </Grid>
 
                             <!-- Regrabar -->
-                            <Button Grid.Column="2" Style="{StaticResource BtnHeader}" Click="BtnRegrabar_Click" ToolTip="Grabar nuevo mensaje">
+                            <Button Grid.Column="2" Style="{StaticResource BtnHeader}" Click="BtnRegrabar_Click" ToolTip="{DynamicResource Str_AudioRegrabarTooltip}">
                                 <Path Data="{StaticResource IconMicGeo}" Fill="#334155" Width="13" Height="13" Stretch="Uniform"/>
                             </Button>
 
                             <!-- Eliminar Audio -->
-                            <Button Grid.Column="3" Style="{StaticResource BtnHeaderDanger}" Click="BtnEliminarAudio_Click" ToolTip="Eliminar audio">
+                            <Button Grid.Column="3" Style="{StaticResource BtnHeaderDanger}" Click="BtnEliminarAudio_Click" ToolTip="{DynamicResource Str_AudioEliminarTooltip}">
                                 <Path Data="{StaticResource IconTrashGeo}" Stroke="#EF4444" StrokeThickness="1.8" Width="12" Height="12" Stretch="Uniform"/>
                             </Button>
 
                             <!-- Cerrar panel -->
-                            <Button Grid.Column="4" Style="{StaticResource BtnHeader}" Click="BtnCerrarAudio_Click" ToolTip="Ocultar reproductor">
+                            <Button Grid.Column="4" Style="{StaticResource BtnHeader}" Click="BtnCerrarAudio_Click" ToolTip="{DynamicResource Str_AudioOcultarPlayer}">
                                 <Path Data="{StaticResource IconCloseGeo}" Stroke="#475569" StrokeThickness="2" Width="9" Height="9" Stretch="Uniform"/>
                             </Button>
                         </Grid>
@@ -471,7 +471,7 @@
 
                         <!-- Botón de Dibujo a mano alzada -->
                         <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
-                            <ToggleButton x:Name="BtnDibujar" Style="{StaticResource ToggleDibujoModerno}" ToolTip="Dibujo a mano alzada"
+                            <ToggleButton x:Name="BtnDibujar" Style="{StaticResource ToggleDibujoModerno}" ToolTip="{DynamicResource Str_NoteTooltipDibujo}"
                                           Checked="BtnDibujar_Checked" Unchecked="BtnDibujar_Unchecked">
                                 <Path Data="{StaticResource IconPenGeo}" Fill="#1E293B" Width="13" Height="13" Stretch="Uniform"/>
                             </ToggleButton>
@@ -479,12 +479,12 @@
                             <!-- Paleta de Trazos -->
                             <StackPanel x:Name="PanelHerramientas" Orientation="Horizontal" VerticalAlignment="Center" Margin="6,0,0,0" Visibility="Collapsed">
                                 <Slider x:Name="SliderGrosor" Minimum="1" Maximum="14" Value="3" Width="44" VerticalAlignment="Center" ValueChanged="SliderGrosor_ValueChanged"/>
-                                <Button Style="{StaticResource BtnColorInk}" Background="Black" Margin="4,0,2,0" Click="InkNegro_Click" ToolTip="Negro"/>
-                                <Button Style="{StaticResource BtnColorInk}" Background="#EF4444" Margin="2,0" Click="InkRojo_Click" ToolTip="Rojo"/>
-                                <Button Style="{StaticResource BtnColorInk}" Background="#3B82F6" Margin="2,0" Click="InkAzul_Click" ToolTip="Azul"/>
-                                <Button Style="{StaticResource BtnColorInk}" Background="#10B981" Margin="2,0" Click="InkVerde_Click" ToolTip="Verde"/>
-                                <Button Style="{StaticResource BtnColorInk}" Background="#F59E0B" Margin="2,0" Click="InkAmarillo_Click" ToolTip="Resaltador"/>
-                                <Button Style="{StaticResource BtnHeaderDanger}" Margin="4,0,0,0" Width="22" Height="22" ToolTip="Borrar todos los trazos" Click="BorrarInk_Click">
+                                <Button Style="{StaticResource BtnColorInk}" Background="Black" Margin="4,0,2,0" Click="InkNegro_Click" ToolTip="{DynamicResource Str_ColorNegro}"/>
+                                <Button Style="{StaticResource BtnColorInk}" Background="#EF4444" Margin="2,0" Click="InkRojo_Click" ToolTip="{DynamicResource Str_ColorRojo}"/>
+                                <Button Style="{StaticResource BtnColorInk}" Background="#3B82F6" Margin="2,0" Click="InkAzul_Click" ToolTip="{DynamicResource Str_ColorAzul}"/>
+                                <Button Style="{StaticResource BtnColorInk}" Background="#10B981" Margin="2,0" Click="InkVerde_Click" ToolTip="{DynamicResource Str_ColorVerde}"/>
+                                <Button Style="{StaticResource BtnColorInk}" Background="#F59E0B" Margin="2,0" Click="InkAmarillo_Click" ToolTip="{DynamicResource Str_ColorResaltador}"/>
+                                <Button Style="{StaticResource BtnHeaderDanger}" Margin="4,0,0,0" Width="22" Height="22" ToolTip="{DynamicResource Str_NoteTooltipBorrarTrazos}" Click="BorrarInk_Click">
                                     <Path Data="{StaticResource IconTrashGeo}" Stroke="#EF4444" StrokeThickness="1.6" Width="10" Height="10" Stretch="Uniform"/>
                                 </Button>
                             </StackPanel>
@@ -493,7 +493,7 @@
                         <!-- Indicador resumen a la derecha -->
                         <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
                             <!-- Badge rápida de audio si existe -->
-                            <Button ToolTip="Reproducir audio adjunto" Click="BtnAudio_Click" Margin="0,0,2,0">
+                            <Button ToolTip="{DynamicResource Str_NoteTooltipPlayAudio}" Click="BtnAudio_Click" Margin="0,0,2,0">
                                 <Button.Style>
                                     <Style TargetType="Button" BasedOn="{StaticResource BtnHeader}">
                                         <Setter Property="Visibility" Value="Collapsed"/>
@@ -545,20 +545,20 @@
                             <TextBlock Text="v2.0" FontSize="9" FontWeight="Bold" Foreground="#B45309"/>
                         </Border>
                     </StackPanel>
-                    <TextBlock Text="por Tomas Folgado" FontSize="9.5" Foreground="#94A3B8" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                    <TextBlock Text="{DynamicResource Str_NotePorAutor}" FontSize="9.5" Foreground="#94A3B8" HorizontalAlignment="Center" Margin="0,0,0,10"/>
                     <Border Height="1" Background="#F1F5F9" Margin="0,0,0,10"/>
 
                     <!-- Selector de Colores Vivos -->
-                    <TextBlock Text="COLOR DE FONDO" FontSize="10" FontWeight="Bold" Foreground="#64748B" Margin="2,0,0,6"/>
+                    <TextBlock Text="{DynamicResource Str_NoteColorFondo}" FontSize="10" FontWeight="Bold" Foreground="#64748B" Margin="2,0,0,6"/>
                     <WrapPanel HorizontalAlignment="Center" Margin="0,0,0,6">
-                        <Button Style="{StaticResource BtnColorSwatch}" Background="#FFEB3B" ToolTip="Amarillo Canario" Margin="3" Click="Fondo0_Click"/>
-                        <Button Style="{StaticResource BtnColorSwatch}" Background="#64B5F6" ToolTip="Azul Cielo" Margin="3" Click="Fondo1_Click"/>
-                        <Button Style="{StaticResource BtnColorSwatch}" Background="#8CE99A" ToolTip="Verde Menta" Margin="3" Click="Fondo2_Click"/>
-                        <Button Style="{StaticResource BtnColorSwatch}" Background="#FF80AB" ToolTip="Rosa Neón" Margin="3" Click="Fondo3_Click"/>
-                        <Button Style="{StaticResource BtnColorSwatch}" Background="#CE93D8" ToolTip="Morado Lavanda" Margin="3" Click="Fondo4_Click"/>
-                        <Button Style="{StaticResource BtnColorSwatch}" Background="#FFA726" ToolTip="Naranja Mandarina" Margin="3" Click="Fondo5_Click"/>
-                        <Button Style="{StaticResource BtnColorSwatch}" Background="#4DD0E1" ToolTip="Cyan Turquesa" Margin="3" Click="Fondo6_Click"/>
-                        <Button Style="{StaticResource BtnColorSwatch}" Background="#FFFFFF" ToolTip="Blanco Nieve" Margin="3" Click="Fondo7_Click"/>
+                        <Button Style="{StaticResource BtnColorSwatch}" Background="#FFEB3B" ToolTip="{DynamicResource Str_ColorAmarillo}" Margin="3" Click="Fondo0_Click"/>
+                        <Button Style="{StaticResource BtnColorSwatch}" Background="#64B5F6" ToolTip="{DynamicResource Str_ColorAzul}" Margin="3" Click="Fondo1_Click"/>
+                        <Button Style="{StaticResource BtnColorSwatch}" Background="#8CE99A" ToolTip="{DynamicResource Str_ColorVerde}" Margin="3" Click="Fondo2_Click"/>
+                        <Button Style="{StaticResource BtnColorSwatch}" Background="#FF80AB" ToolTip="{DynamicResource Str_ColorRosa}" Margin="3" Click="Fondo3_Click"/>
+                        <Button Style="{StaticResource BtnColorSwatch}" Background="#CE93D8" ToolTip="{DynamicResource Str_ColorMorado}" Margin="3" Click="Fondo4_Click"/>
+                        <Button Style="{StaticResource BtnColorSwatch}" Background="#FFA726" ToolTip="{DynamicResource Str_ColorNaranja}" Margin="3" Click="Fondo5_Click"/>
+                        <Button Style="{StaticResource BtnColorSwatch}" Background="#4DD0E1" ToolTip="{DynamicResource Str_ColorCyan}" Margin="3" Click="Fondo6_Click"/>
+                        <Button Style="{StaticResource BtnColorSwatch}" Background="#FFFFFF" ToolTip="{DynamicResource Str_ColorBlanco}" Margin="3" Click="Fondo7_Click"/>
                     </WrapPanel>
 
                     <!-- Intensidad / Tono del Color -->
@@ -567,7 +567,7 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0" Text="INTENSIDAD DE COLOR" FontSize="10" FontWeight="Bold" Foreground="#64748B" VerticalAlignment="Center"/>
+                        <TextBlock Grid.Column="0" Text="{DynamicResource Str_NoteIntensidad}" FontSize="10" FontWeight="Bold" Foreground="#64748B" VerticalAlignment="Center"/>
                         <TextBlock x:Name="TxtIntensidadPct" Grid.Column="1" Text="85%" FontSize="10.5" FontWeight="Bold" Foreground="#3B82F6" VerticalAlignment="Center"/>
                     </Grid>
                     <Slider x:Name="SliderIntensidad" Minimum="0.15" Maximum="1.0"
@@ -575,14 +575,14 @@
                             ValueChanged="SliderIntensidad_ValueChanged"
                             Margin="4,2,4,6" SmallChange="0.05" LargeChange="0.15"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10">
-                        <Button Content="Pastel (30%)" Style="{StaticResource BtnPill}" Margin="2,0" Click="IntensidadPastel_Click"/>
-                        <Button Content="Medio (65%)" Style="{StaticResource BtnPill}" Margin="2,0" Click="IntensidadMedia_Click"/>
-                        <Button Content="Vivo (100%)" Style="{StaticResource BtnPill}" Margin="2,0" Click="IntensidadViva_Click"/>
+                        <Button Content="{DynamicResource Str_NotePastel}" Style="{StaticResource BtnPill}" Margin="2,0" Click="IntensidadPastel_Click"/>
+                        <Button Content="{DynamicResource Str_NoteMedio}" Style="{StaticResource BtnPill}" Margin="2,0" Click="IntensidadMedia_Click"/>
+                        <Button Content="{DynamicResource Str_NoteVivo}" Style="{StaticResource BtnPill}" Margin="2,0" Click="IntensidadViva_Click"/>
                     </StackPanel>
                     <Border Height="1" Background="#F1F5F9" Margin="0,0,0,10"/>
 
                     <!-- Opacidad -->
-                    <TextBlock Text="OPACIDAD" FontSize="10" FontWeight="Bold" Foreground="#64748B" Margin="2,0,0,6"/>
+                    <TextBlock Text="{DynamicResource Str_NoteOpacidad}" FontSize="10" FontWeight="Bold" Foreground="#64748B" Margin="2,0,0,6"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10">
                         <Button Content="20%" Style="{StaticResource BtnPill}" Margin="2,0" Click="Opacidad20_Click"/>
                         <Button Content="40%" Style="{StaticResource BtnPill}" Margin="2,0" Click="Opacidad40_Click"/>
@@ -593,7 +593,7 @@
                     <Border Height="1" Background="#F1F5F9" Margin="0,0,0,10"/>
 
                     <!-- Tipografía -->
-                    <TextBlock Text="TIPOGRAFÍA" FontSize="10" FontWeight="Bold" Foreground="#64748B" Margin="2,0,0,6"/>
+                    <TextBlock Text="{DynamicResource Str_NoteTipografia}" FontSize="10" FontWeight="Bold" Foreground="#64748B" Margin="2,0,0,6"/>
                     <ComboBox x:Name="ComboFuente" Margin="0,0,0,8" Height="30" FontSize="12" SelectionChanged="ComboFuente_SelectionChanged">
                         <ComboBoxItem Content="Segoe UI" IsSelected="True"/>
                         <ComboBoxItem Content="Arial"/>
@@ -616,20 +616,20 @@
                     <!-- Siempre al frente -->
                     <CheckBox x:Name="ChkAlFrente" Margin="4,0,0,12" FontSize="12.5" Foreground="#334155"
                               IsChecked="{Binding SiempreAlFrente}" Click="ChkAlFrente_Click">
-                        <TextBlock Text="Siempre al frente (Topmost)"/>
+                        <TextBlock Text="{DynamicResource Str_NoteSiempreAlFrente}"/>
                     </CheckBox>
 
                     <!-- Acciones rápidas -->
                     <Button Style="{StaticResource BtnSecondaryModern}" Margin="0,0,0,6" Click="OcultarNota_Click" HorizontalContentAlignment="Center">
                         <StackPanel Orientation="Horizontal">
                             <Path Data="{StaticResource IconEyeOffGeo}" Stroke="#475569" StrokeThickness="1.4" Width="13" Height="13" Stretch="Uniform" Margin="0,0,8,0" VerticalAlignment="Center"/>
-                            <TextBlock Text="Ocultar del escritorio" VerticalAlignment="Center"/>
+                            <TextBlock Text="{DynamicResource Str_NoteOcultarEscritorio}" VerticalAlignment="Center"/>
                         </StackPanel>
                     </Button>
                     <Button Style="{StaticResource BtnSecondaryModern}" Click="EliminarNota_Click" HorizontalContentAlignment="Center" Background="#FFF1F2" BorderBrush="#FECDD3" Foreground="#E11D48">
                         <StackPanel Orientation="Horizontal">
                             <Path Data="{StaticResource IconTrashGeo}" Stroke="#E11D48" StrokeThickness="1.4" Width="13" Height="13" Stretch="Uniform" Margin="0,0,8,0" VerticalAlignment="Center"/>
-                            <TextBlock Text="Eliminar nota definitivamente" VerticalAlignment="Center"/>
+                            <TextBlock Text="{DynamicResource Str_NoteEliminarDefinitiva}" VerticalAlignment="Center"/>
                         </StackPanel>
                     </Button>
                 </StackPanel>

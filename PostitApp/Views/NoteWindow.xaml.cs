@@ -250,8 +250,8 @@ namespace PostitApp.Views
         private void BtnCerrar_Click(object sender, RoutedEventArgs e)
         {
             var resultado = MessageBox.Show(
-                "¿Deseas eliminar definitivamente esta nota?\n\n(Pulsa NO si solo deseas ocultarla)",
-                "TopApp Memo — Cerrar Nota",
+                LocalizationService.Instance.GetString("Str_MsgCerrarNotaPregunta", "¿Deseas eliminar definitivamente esta nota?\n\n(Pulsa NO si solo deseas ocultarla)"),
+                LocalizationService.Instance.GetString("Str_MsgCerrarNotaTitulo", "TopApp Memo — Cerrar Nota"),
                 MessageBoxButton.YesNoCancel,
                 MessageBoxImage.Question);
 
@@ -272,8 +272,8 @@ namespace PostitApp.Views
         {
             MenuPopup.IsOpen = false;
             var resultado = MessageBox.Show(
-                "¿Eliminar esta nota definitivamente?",
-                "Eliminar Nota",
+                LocalizationService.Instance.GetString("Str_MsgEliminarNotaPregunta", "¿Eliminar esta nota definitivamente?"),
+                LocalizationService.Instance.GetString("Str_MsgEliminarNotaTitulo", "Eliminar Nota"),
                 MessageBoxButton.YesNo,
                 MessageBoxImage.Question);
 
@@ -534,7 +534,11 @@ namespace PostitApp.Views
                 }
                 else
                 {
-                    MessageBox.Show("El archivo de audio no existe en disco.", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show(
+                        LocalizationService.Instance.GetString("Str_MsgAudioNoExiste", "El archivo de audio no existe en disco."),
+                        LocalizationService.Instance.GetString("Str_MsgAudioAviso", "Aviso"),
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
                     _viewModel.TieneAudio = false;
                     ActualizarEstadoPanelAudio();
                 }
@@ -550,7 +554,11 @@ namespace PostitApp.Views
 
         private void BtnEliminarAudio_Click(object sender, RoutedEventArgs e)
         {
-            var res = MessageBox.Show("¿Eliminar este mensaje de voz?", "Confirmar", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            var res = MessageBox.Show(
+                LocalizationService.Instance.GetString("Str_MsgEliminarAudioPregunta", "¿Eliminar este mensaje de voz?"),
+                LocalizationService.Instance.GetString("Str_MsgEliminarAudioTitulo", "Confirmar"),
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question);
             if (res == MessageBoxResult.Yes)
             {
                 EliminarArchivoAudio();
@@ -603,9 +611,9 @@ namespace PostitApp.Views
             if (_viewModel.AlarmaActiva)
             {
                 var resultado = MessageBox.Show(
-                    $"Alarma actual programada para:\n{_viewModel.FechaAlarma:dd/MM/yyyy HH:mm}\n\n" +
-                    "¿Deseas DESACTIVAR la alarma?\n(Pulsa NO para reprogramarla)",
-                    "TopApp Memo — Alarma",
+                    $"{LocalizationService.Instance.GetString("Str_ConAlarmaPrefix", "Alarma")}: {_viewModel.FechaAlarma:dd/MM/yyyy HH:mm}\n\n" +
+                    LocalizationService.Instance.GetString("Str_MsgAlarmaDesactivar", "¿Deseas DESACTIVAR la alarma?\n(Pulsa NO para reprogramarla)"),
+                    LocalizationService.Instance.GetString("Str_AlarmTitle", "TopApp Memo — Alarma"),
                     MessageBoxButton.YesNoCancel,
                     MessageBoxImage.Question);
 
@@ -646,9 +654,9 @@ namespace PostitApp.Views
                 IniciarTimerAlarma();
 
                 MessageBox.Show(
-                    $"Alarma activada con éxito:\n\n{_viewModel.FechaAlarma:dd/MM/yyyy HH:mm}\n" +
-                    $"Duración: {_viewModel.DuracionAlarmaSeg} seg\n" +
-                    $"Sonido: {(string.IsNullOrEmpty(_viewModel.RutaSonidoAlarma) ? "Sistema" : Path.GetFileName(_viewModel.RutaSonidoAlarma))}",
+                    $"{LocalizationService.Instance.GetString("Str_MsgAlarmaActivadaExito", "Alarma activada con éxito")}:\n\n{_viewModel.FechaAlarma:dd/MM/yyyy HH:mm}\n" +
+                    $"{LocalizationService.Instance.GetString("Str_AlarmDuracion", "Duración")}: {_viewModel.DuracionAlarmaSeg} {LocalizationService.Instance.GetString("Str_AlarmSegundos", "seg")}\n" +
+                    $"{LocalizationService.Instance.GetString("Str_AlarmSonido", "Sonido")}: {(string.IsNullOrEmpty(_viewModel.RutaSonidoAlarma) ? LocalizationService.Instance.GetString("Str_AlarmSonidoSistema", "Sistema") : Path.GetFileName(_viewModel.RutaSonidoAlarma))}",
                     "TopApp Memo",
                     MessageBoxButton.OK,
                     MessageBoxImage.Information);
@@ -714,10 +722,10 @@ namespace PostitApp.Views
                     : _viewModel.TextoPlano;
 
                 MessageBox.Show(
-                    $"🔔 ¡RECORDATORIO DE ALARMA!\n\n" +
+                    $"{LocalizationService.Instance.GetString("Str_MsgAlarmaRecordatorio", "🔔 ¡RECORDATORIO DE ALARMA!")}\n\n" +
                     $"{_viewModel.FechaAlarma.Value:dd/MM/yyyy HH:mm}\n\n" +
                     $"{texto}",
-                    "TopApp Memo — Alarma",
+                    LocalizationService.Instance.GetString("Str_AlarmTitle", "TopApp Memo — Alarma"),
                     MessageBoxButton.OK,
                     MessageBoxImage.Exclamation);
 

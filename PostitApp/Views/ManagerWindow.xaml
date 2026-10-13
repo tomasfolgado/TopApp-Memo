@@ -400,11 +400,11 @@
                                                         <Style TargetType="TextBlock">
                                                             <Style.Triggers>
                                                                 <DataTrigger Binding="{Binding EsVisible}" Value="True">
-                                                                    <Setter Property="Text" Value="En Escritorio"/>
+                                                                    <Setter Property="Text" Value="{DynamicResource Str_CardEstadoVisible}"/>
                                                                     <Setter Property="Foreground" Value="#15803D"/>
                                                                 </DataTrigger>
                                                                 <DataTrigger Binding="{Binding EsVisible}" Value="False">
-                                                                    <Setter Property="Text" Value="Oculta"/>
+                                                                    <Setter Property="Text" Value="{DynamicResource Str_CardEstadoOculta}"/>
                                                                     <Setter Property="Foreground" Value="#64748B"/>
                                                                 </DataTrigger>
                                                             </Style.Triggers>
@@ -427,7 +427,7 @@
                                                             </Style.Triggers>
                                                         </Style>
                                                     </Border.Style>
-                                                    <Path Data="{StaticResource IconMicGeo}" Fill="#2563EB" Width="9" Height="9" Stretch="Uniform" ToolTip="Tiene mensaje de voz grabado"/>
+                                                    <Path Data="{StaticResource IconMicGeo}" Fill="#2563EB" Width="9" Height="9" Stretch="Uniform" ToolTip="{DynamicResource Str_CardTooltipAudio}"/>
                                                 </Border>
 
                                                 <!-- Alarma badge -->
@@ -457,7 +457,7 @@
                                                             </Style.Triggers>
                                                         </Style>
                                                     </Border.Style>
-                                                    <Path Data="{StaticResource IconPinGeo}" Fill="#64748B" Width="9" Height="9" Stretch="Uniform" ToolTip="Siempre al frente"/>
+                                                    <Path Data="{StaticResource IconPinGeo}" Fill="#64748B" Width="9" Height="9" Stretch="Uniform" ToolTip="{DynamicResource Str_NoteSiempreAlFrente}"/>
                                                 </Border>
                                             </StackPanel>
                                         </Grid>
@@ -499,14 +499,14 @@
                                             </Grid.ColumnDefinitions>
 
                                             <!-- 1. Abrir en escritorio -->
-                                            <Button Grid.Column="0" Style="{StaticResource BtnCardAction}" ToolTip="Abrir / Traer al frente"
+                                            <Button Grid.Column="0" Style="{StaticResource BtnCardAction}" ToolTip="{DynamicResource Str_CardTooltipAbrir}"
                                                     Command="{Binding DataContext.AbrirNotaCmd, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
                                                     CommandParameter="{Binding}">
                                                 <Path Data="{StaticResource IconEyeGeo}" Stroke="#475569" StrokeThickness="1.5" Width="14" Height="14" Stretch="Uniform"/>
                                             </Button>
 
                                             <!-- 2. Reproducir Audio Preview -->
-                                            <Button Grid.Column="1" ToolTip="Escuchar mensaje de voz"
+                                            <Button Grid.Column="1" ToolTip="{DynamicResource Str_CardTooltipAudio}"
                                                     Command="{Binding DataContext.ReproducirAudioPreviewCmd, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
                                                     CommandParameter="{Binding}">
                                                 <Button.Style>
@@ -514,7 +514,7 @@
                                                         <Setter Property="Opacity" Value="0.25"/>
                                                         <Setter Property="IsEnabled" Value="False"/>
                                                         <Style.Triggers>
-                                                            <DataTrigger Binding="{Binding TieneAudio}" Value="True">
+                                                             <DataTrigger Binding="{Binding TieneAudio}" Value="True">
                                                                 <Setter Property="Opacity" Value="1.0"/>
                                                                 <Setter Property="IsEnabled" Value="True"/>
                                                             </DataTrigger>
@@ -525,14 +525,14 @@
                                             </Button>
 
                                             <!-- 3. Toggle Visibilidad (Mostrar / Ocultar) -->
-                                            <Button Grid.Column="2" Style="{StaticResource BtnCardAction}" ToolTip="Alternar visibilidad"
+                                            <Button Grid.Column="2" Style="{StaticResource BtnCardAction}" ToolTip="{DynamicResource Str_CardTooltipVisibilidad}"
                                                     Command="{Binding DataContext.ToggleVisibilidadCmd, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
                                                     CommandParameter="{Binding}">
                                                 <Path Data="{StaticResource IconEyeOffGeo}" Stroke="#64748B" StrokeThickness="1.4" Width="14" Height="14" Stretch="Uniform"/>
                                             </Button>
 
                                             <!-- 4. Eliminar Nota -->
-                                            <Button Grid.Column="3" Style="{StaticResource BtnCardActionDanger}" ToolTip="Eliminar definitivamente"
+                                            <Button Grid.Column="3" Style="{StaticResource BtnCardActionDanger}" ToolTip="{DynamicResource Str_CardTooltipEliminar}"
                                                     Command="{Binding DataContext.EliminarNotaCmd, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
                                                     CommandParameter="{Binding}">
                                                 <Path Data="{StaticResource IconTrashGeo}" Stroke="#EF4444" StrokeThickness="1.4" Width="13" Height="13" Stretch="Uniform"/>
@@ -561,9 +561,9 @@
                     <Border Width="64" Height="64" Background="#F1F5F9" CornerRadius="32" HorizontalAlignment="Center" Margin="0,0,0,16">
                         <Path Data="{StaticResource IconSearchGeo}" Stroke="#94A3B8" StrokeThickness="2" Width="24" Height="24" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
-                    <TextBlock Text="No se encontraron notas" FontSize="16" FontWeight="SemiBold" Foreground="#334155" HorizontalAlignment="Center"/>
-                    <TextBlock Text="Prueba con otra búsqueda o crea una nueva nota adhesiva." FontSize="12.5" Foreground="#94A3B8" HorizontalAlignment="Center" Margin="0,4,0,16"/>
-                    <Button Content="+ Crear nueva nota" Style="{StaticResource BtnPrimaryModern}" HorizontalAlignment="Center" Command="{Binding NuevaNotaCmd}"/>
+                    <TextBlock Text="{DynamicResource Str_EmptyNoNotas}" FontSize="16" FontWeight="SemiBold" Foreground="#334155" HorizontalAlignment="Center"/>
+                    <TextBlock Text="{DynamicResource Str_EmptySugerencia}" FontSize="12.5" Foreground="#94A3B8" HorizontalAlignment="Center" Margin="0,4,0,16"/>
+                    <Button Content="{DynamicResource Str_EmptyCrear}" Style="{StaticResource BtnPrimaryModern}" HorizontalAlignment="Center" Command="{Binding NuevaNotaCmd}"/>
                 </StackPanel>
             </Grid>
         </ScrollViewer>

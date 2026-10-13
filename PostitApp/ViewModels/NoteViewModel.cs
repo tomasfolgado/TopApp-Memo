@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using PostitApp.Models;
 using PostitApp.Helpers;
+using PostitApp.Services;
 
 namespace PostitApp.ViewModels
 {
@@ -19,6 +20,7 @@ namespace PostitApp.ViewModels
         {
             Modelo = modelo;
             InicializarComandos();
+            LocalizationService.Instance.LanguageChanged += (s, e) => OnPropertyChanged(nameof(TextoAlarma));
         }
 
         // ==================== PROPIEDADES BÁSICAS ====================
@@ -155,8 +157,8 @@ namespace PostitApp.ViewModels
             get
             {
                 if (!AlarmaActiva || FechaAlarma == null)
-                    return "Sin alarma";
-                return $"Alarma: {FechaAlarma.Value:dd/MM/yyyy HH:mm}";
+                    return LocalizationService.Instance.GetString("Str_SinAlarma", "Sin alarma");
+                return $"{LocalizationService.Instance.GetString("Str_ConAlarmaPrefix", "Alarma")}: {FechaAlarma.Value:dd/MM/yyyy HH:mm}";
             }
         }
 

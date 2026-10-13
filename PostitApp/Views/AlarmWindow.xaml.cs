@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using PostitApp.Helpers;
+using PostitApp.Services;
 
 namespace PostitApp.Views
 {
@@ -26,7 +27,7 @@ namespace PostitApp.Views
 
             DuracionSegundos = duracionActual > 0 ? duracionActual : 10;
             SliderDuracion.Value = DuracionSegundos;
-            LblDuracion.Text = $"{DuracionSegundos} segundos";
+            LblDuracion.Text = $"{DuracionSegundos} {LocalizationService.Instance.GetString("Str_AlarmSegundos", "segundos")}";
 
             RutaSonido = sonidoActual;
             if (!string.IsNullOrEmpty(RutaSonido) && File.Exists(RutaSonido))
@@ -35,7 +36,7 @@ namespace PostitApp.Views
             }
             else
             {
-                LblSonido.Text = "Sonido del sistema";
+                LblSonido.Text = LocalizationService.Instance.GetString("Str_AlarmSonidoSistema", "Sonido del sistema");
             }
         }
 
@@ -54,7 +55,7 @@ namespace PostitApp.Views
         {
             if (LblDuracion == null) return;
             DuracionSegundos = (int)e.NewValue;
-            LblDuracion.Text = $"{DuracionSegundos} segundos";
+            LblDuracion.Text = $"{DuracionSegundos} {LocalizationService.Instance.GetString("Str_AlarmSegundos", "segundos")}";
         }
 
         private void Preset_Click(object sender, RoutedEventArgs e)
@@ -85,8 +86,8 @@ namespace PostitApp.Views
         {
             var dialog = new Microsoft.Win32.OpenFileDialog
             {
-                Title = "Seleccionar sonido de alarma",
-                Filter = "Archivos WAV (*.wav)|*.wav|Todos los archivos (*.*)|*.*",
+                Title = LocalizationService.Instance.GetString("Str_AlarmDialogTitle", "Seleccionar sonido de alarma"),
+                Filter = LocalizationService.Instance.GetString("Str_AlarmDialogFiltro", "Archivos WAV (*.wav)|*.wav|Todos los archivos (*.*)|*.*"),
                 InitialDirectory = @"C:\Windows\Media"
             };
 
@@ -119,7 +120,7 @@ namespace PostitApp.Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"No se pudo reproducir: {ex.Message}", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show($"{LocalizationService.Instance.GetString("Str_AlarmErrorReproducir", "No se pudo reproducir")}: {ex.Message}", LocalizationService.Instance.GetString("Str_MsgAudioAviso", "Aviso"), MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -127,21 +128,21 @@ namespace PostitApp.Views
         {
             if (DpFecha.SelectedDate == null)
             {
-                MessageBox.Show("Por favor selecciona una fecha.", "Alarma", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(LocalizationService.Instance.GetString("Str_AlarmValidaFecha", "Por favor selecciona una fecha."), LocalizationService.Instance.GetString("Str_AlarmTitle", "Alarma"), MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
             if (!int.TryParse(TxtHora.Text.Trim(), out int hora) || hora < 0 || hora > 23 ||
                 !int.TryParse(TxtMinuto.Text.Trim(), out int minuto) || minuto < 0 || minuto > 59)
             {
-                MessageBox.Show("Introduce una hora y minutos válidos (00-23 : 00-59).", "Alarma", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(LocalizationService.Instance.GetString("Str_AlarmValidaHora", "Introduce una hora y minutos válidos (00-23 : 00-59)."), LocalizationService.Instance.GetString("Str_AlarmTitle", "Alarma"), MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
             var fecha = DpFecha.SelectedDate.Value.Date.AddHours(hora).AddMinutes(minuto);
             if (fecha <= DateTime.Now)
             {
-                MessageBox.Show("La fecha y hora de la alarma debe ser futura.", "Alarma", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show(LocalizationService.Instance.GetString("Str_AlarmValidaFutura", "La fecha y hora de la alarma debe ser futura."), LocalizationService.Instance.GetString("Str_AlarmTitle", "Alarma"), MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
