@@ -134,7 +134,7 @@ All distributed release files are scanned and verified clean of malware. You can
 | File / Archivo | Description | SHA-256 Checksum | VirusTotal |
 |---|---|---|:---:|
 | `TopAppMemo.exe` | Main Executable | `F83F04B2C26E1EFAEABC6463CCA7221A9237A1EB09613AAA8A55E93CADB5D42F` | [Report](https://www.virustotal.com/gui/file/f83f04b2c26e1efaeabc6463cca7221a9237a1eb09613aaa8a55e93cadb5d42f/detection) |
-| `TopAppMemo-v2.0.0-Windows.zip` | Release Archive | `4214D6B04ABA835FAF586F5CE31116B2AE5865751573A18890792ED60141B68C` | [Report](https://www.virustotal.com/gui/file/4214d6b04aba835faf586f5ce31116b2ae5865751573a18890792ed60141b68c/detection) |
+
 
 ---
 
